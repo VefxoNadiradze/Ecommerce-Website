@@ -1,17 +1,23 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import Productdata from "../data.json";
+
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+
+interface Idatas {
+  datas: Product[];
+}
 
 export default function Discount() {
+  const dataSelector = useSelector((dataSelect: Idatas) => dataSelect.datas);
   const { page } = useParams();
-  const product = Productdata.products.filter((item) => item.page === page);
+  const product = dataSelector.filter((item: Product) => item.page === page);
 
   return (
     <ProductsPar>
-      {product.map((item) => {
+      {product.map((item: Product) => {
         return (
           <ShoppingItem key={item.id}>
             <div className="itemHead">
