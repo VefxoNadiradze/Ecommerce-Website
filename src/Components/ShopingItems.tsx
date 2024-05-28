@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
@@ -13,10 +12,12 @@ interface Idatas {
 export default function Discount() {
   const dataSelector = useSelector((dataSelect: Idatas) => dataSelect.datas);
   const { page } = useParams();
-  const product = dataSelector.filter((item: Product) => item.page === page);
+  let product = dataSelector.filter((item: Product) => item.page === page);
 
   return (
     <ProductsPar>
+      {/* if product length is less then 1 display the error */}
+      {product.length < 1 && <ErrorDiv>Product not found</ErrorDiv>}
       {product.map((item: Product) => {
         return (
           <ShoppingItem key={item.id}>
@@ -49,7 +50,18 @@ export default function Discount() {
   );
 }
 
+const ErrorDiv = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: red;
+  font-weight: bold;
+`;
+
 const ProductsPar = styled.div`
+  position: relative;
   background-color: #f6f9fc;
   padding: 50px;
   width: 100%;

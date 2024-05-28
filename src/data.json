@@ -385,7 +385,7 @@
 
     {
       "id": "16",
-      "category": "women's  T-shirt",
+      "category": "women's T-shirt",
       "page": "Clothes&Shoes",
       "name": "OWN THE RUN TEE",
       "seller": "Adidas",
@@ -400,13 +400,12 @@
     },
     {
       "id": "17",
-      "category": "women's  T-shirt",
+      "category": "women's T-shirt",
       "page": "Clothes&Shoes",
       "name": "OWN THE RUN 3-STRIPES TEE",
       "seller": "Adidas",
       "price": 160,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-
       "ratings": 4,
       "ratingsCount": 3972,
       "img": {
@@ -638,7 +637,7 @@
       "category": "Fitness",
       "page": "Fitness",
       "name": "Phoenix fitness, Hexagonal Dumbell, 25 KG",
-      "seller": "Phoenix fitness ",
+      "seller": "Phoenix fitness",
       "price": 130,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
@@ -652,7 +651,7 @@
       "id": "33",
       "category": "Fitness",
       "page": "Fitness",
-      "seller": "Phoenix fitness ",
+      "seller": "Phoenix fitness",
       "name": "Phoenix fitness, No Bounce Medicine Slam Ball, 3 KG",
       "price": 120,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
@@ -668,7 +667,7 @@
       "category": "Fitness",
       "page": "Fitness",
       "name": "Myga, Hexagonal Dumbbell, 8 KG Pair",
-      "seller": "Myga ",
+      "seller": "Myga",
       "price": 80,
       "ratings": 4,
       "ratingsCount": 3972,

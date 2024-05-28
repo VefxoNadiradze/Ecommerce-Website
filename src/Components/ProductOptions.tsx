@@ -4,7 +4,12 @@ import { IoIosSearch } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { filterByCategory } from "../Redux/dataSlice";
+
+import {
+  FilterByBrands,
+  FilterByCategoryBtn,
+  filterByInputCategory,
+} from "../Redux/dataSlice";
 
 export default function ProductOptions() {
   const { page } = useParams();
@@ -25,16 +30,16 @@ export default function ProductOptions() {
 
   const onSubmitFilterItem = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (FilterByInput.length < 1) {
-      dispatch(filterByCategory(FilterByInput));
-    }
+
+    dispatch(filterByInputCategory(FilterByInput));
   };
 
   const onchangeFilterItems = (e: ChangeEvent<HTMLInputElement>) => {
     let Event = e.target as HTMLInputElement;
     setFilterByInput(Event.value);
+
     if (FilterByInput.trim() !== "") {
-      dispatch(filterByCategory(FilterByInput));
+      dispatch(filterByInputCategory(FilterByInput));
     }
   };
 
@@ -57,10 +62,24 @@ export default function ProductOptions() {
 
       {uniqueCategories.length > 1 && <p>Categories</p>}
       <div className="filterBycategories">
+        {uniqueCategories.length > 1 && (
+          <button onClick={() => dispatch(FilterByCategoryBtn("All"))}>
+            {" "}
+            All{" "}
+          </button>
+        )}
+
         {uniqueCategories.map((filterItem, index) => {
           return (
             uniqueCategories.length > 1 && (
-              <button key={index}>{filterItem}</button>
+              <button
+                onClick={() => {
+                  dispatch(FilterByCategoryBtn(filterItem));
+                }}
+                key={index}
+              >
+                {filterItem}
+              </button>
             )
           );
         })}
@@ -69,9 +88,19 @@ export default function ProductOptions() {
       {uniqueBrands.length > 1 && <p>Brands</p>}
 
       <div className="filterByBrand">
+        {uniqueBrands.length > 1 && (
+          <button onClick={() => dispatch(FilterByBrands("All"))}>All</button>
+        )}
         {uniqueBrands.map((filterItem, index) => {
           return (
-            uniqueBrands.length > 1 && <button key={index}>{filterItem}</button>
+            uniqueBrands.length > 1 && (
+              <button
+                key={index}
+                onClick={() => dispatch(FilterByBrands(filterItem))}
+              >
+                {filterItem}
+              </button>
+            )
           );
         })}
       </div>
