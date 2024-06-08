@@ -1,10 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import data from "../data.json";
 import { IoIosSearch } from "react-icons/io";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-
+import { IoSearch } from "react-icons/io5";
+import { filterItemsByprice, sortItems } from "../Redux/dataSlice";
 import {
   FilterByBrands,
   FilterByCategoryBtn,
@@ -14,14 +15,25 @@ import {
 export default function ProductOptions() {
   const { page } = useParams();
   let dispatch = useDispatch();
+
+  // Reset filters when the page changes
+  useEffect(() => {
+    dispatch(FilterByCategoryBtn("All"));
+    dispatch(FilterByBrands("All"));
+    setFilterByInput("");
+    dispatch(sortItems("High to Low"));
+  }, [page, dispatch]);
+
   const categoriesFilter = data.products.filter((filterItem) => {
     return page === filterItem.page;
   });
 
+  // get unique category brand btns
   const uniqueCategories = Array.from(
     new Set(categoriesFilter.map((item) => item.category))
   );
 
+  // get unique brand btns
   const uniqueBrands = Array.from(
     new Set(categoriesFilter.map((item) => item.seller))
   );
@@ -30,16 +42,29 @@ export default function ProductOptions() {
 
   const onSubmitFilterItem = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     dispatch(filterByInputCategory(FilterByInput));
   };
 
-  const onchangeFilterItems = (e: ChangeEvent<HTMLInputElement>) => {
-    let Event = e.target as HTMLInputElement;
+  const onchangeFilterItems = (event: ChangeEvent<HTMLInputElement>) => {
+    let Event = event.target as HTMLInputElement;
     setFilterByInput(Event.value);
 
     if (FilterByInput.trim() !== "") {
       dispatch(filterByInputCategory(FilterByInput));
+    }
+  };
+
+  // min price
+  const [minPrice, setMinPrice] = useState<number>(0);
+  // max price
+  const [maxPrice, setMaxPrice] = useState<number>(0);
+
+  // filterByPrice
+  const onSubmitFilterByPrice = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (minPrice > 0 && maxPrice > 0) {
+      dispatch(filterItemsByprice({ maxPrice, minPrice }));
     }
   };
 
@@ -49,6 +74,7 @@ export default function ProductOptions() {
         <input
           onChange={onchangeFilterItems}
           type="text"
+          value={FilterByInput}
           placeholder="Filter..."
         />
         <button type="submit">
@@ -57,7 +83,24 @@ export default function ProductOptions() {
       </form>
 
       <div className="FilterByPrice">
-        <input type="range" />
+        <p>Price</p>
+        <form onSubmit={onSubmitFilterByPrice} className="priceInputs">
+          <input
+            onChange={(e) => setMinPrice(Number(e.target.value))}
+            type="number"
+            placeholder="Min."
+            min={0}
+          />
+          <input
+            onChange={(e) => setMaxPrice(Number(e.target.value))}
+            type="number"
+            placeholder="Max."
+            min={0}
+          />
+          <button type="submit">
+            <IoSearch />
+          </button>
+        </form>
       </div>
 
       {uniqueCategories.length > 1 && <p>Categories</p>}
@@ -120,6 +163,22 @@ const OptionComponent = styled.div`
       padding: 5px;
       width: 100%;
       outline: none;
+      border-radius: 5px;
+      outline: none;
+      border: 2px solid gray;
+
+      &::placeholder {
+        color: gray;
+      }
+
+      &:focus {
+        border: 2px solid green;
+        color: green;
+        font-weight: bold;
+      }
+      &:focus::placeholder {
+        color: green;
+      }
     }
 
     button {
@@ -140,6 +199,46 @@ const OptionComponent = styled.div`
 
   .FilterByPrice {
     margin: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+
+    .priceInputs {
+      margin-top: 8px;
+      display: flex;
+      justify-content: left;
+      gap: 5px;
+
+      input {
+        padding: 5px;
+        max-width: 70px;
+        border: 2px solid gray;
+        border-radius: 5px;
+        outline: none;
+
+        &::placeholder {
+          color: gray;
+        }
+
+        &:focus {
+          border: 2px solid green;
+          color: green;
+          font-weight: bold;
+        }
+        &:focus::placeholder {
+          color: green;
+        }
+      }
+      button {
+        padding: 5px 8px;
+        font-size: 14px;
+        background-color: green;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
   }
 
   .filterBycategories {

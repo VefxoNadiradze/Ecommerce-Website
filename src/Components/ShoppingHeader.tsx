@@ -1,34 +1,44 @@
 import styled from "styled-components";
-import data from "../data.json";
-import { useParams } from "react-router-dom";
 import { ChangeEvent } from "react";
-import { filterByBrandSelect } from "../Redux/dataSlice";
+import { sortItems } from "../Redux/dataSlice";
 import { useDispatch } from "react-redux";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { FaThList } from "react-icons/fa";
+import { HandleArrangement } from "../Redux/arrangementSlice";
 
 export default function ShoppingHeader() {
-  const { page } = useParams();
-  let displatch = useDispatch();
-  const filteredBrands = data.products.filter((item) => item.page === page);
-
-  const ununiqueBrand = Array.from(
-    new Set(filteredBrands.map((item) => item.seller))
-  );
+  const dispatch = useDispatch();
 
   const handleBrandSelectValue = (event: ChangeEvent<HTMLElement>) => {
     let Event = event.target as HTMLInputElement;
 
-    displatch(filterByBrandSelect(Event.value));
+    dispatch(sortItems(Event.value));
   };
 
   return (
     <ShopingHeader>
       <div className="sortByBrand">
         <select onChange={handleBrandSelectValue}>
-          <option>All</option>
-          {ununiqueBrand.map((item, index) => {
-            return <option key={index}>{item}</option>;
-          })}
+          <option>High to Low</option>
+          <option>Low to High</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
         </select>
+      </div>
+
+      <div className="Productarrangement">
+        <button
+          onClick={() => dispatch(HandleArrangement("grid"))}
+          className="grid"
+        >
+          <BsFillGrid3X3GapFill />
+        </button>
+        <button
+          onClick={() => dispatch(HandleArrangement("list"))}
+          className="list"
+        >
+          <FaThList />
+        </button>
       </div>
     </ShopingHeader>
   );
@@ -36,5 +46,22 @@ export default function ShoppingHeader() {
 
 const ShopingHeader = styled.div`
   margin-top: 20px;
-  padding: 20px 20px 0px 20px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1210px;
+  .Productarrangement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      cursor: pointer;
+      display: flex;
+      padding: 3px;
+      background-color: transparent;
+      border: none;
+      color: #c0c0c0;
+    }
+  }
 `;

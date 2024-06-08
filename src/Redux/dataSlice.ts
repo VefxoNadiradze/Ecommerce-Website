@@ -46,15 +46,29 @@ const dataSlice = createSlice({
       });
     },
 
-    filterByBrandSelect: (_state, action: PayloadAction<string>) => {
-      // display all item
-      if (action.payload === "All") {
-        return initialState;
-      }
+    sortItems: (state, action: PayloadAction<string>) => {
+      switch (action.payload) {
+        case "High to Low":
+          return [...state].sort((a, b) => b.price - a.price);
 
-      // filter by brands select
+        case "Low to High":
+          return [...state].sort((a, b) => a.price - b.price);
+
+        case "A-Z":
+          return [...state].sort((a, b) => a.name.localeCompare(b.name));
+
+        case "Z-A":
+          return [...state].sort((a, b) => b.name.localeCompare(a.name));
+      }
+    },
+
+    // filter items by price
+    filterItemsByprice: (_state, action) => {
       return initialState.filter((item) => {
-        return item.seller === action.payload;
+        return (
+          item.price >= action.payload.minPrice &&
+          item.price <= action.payload.maxPrice
+        );
       });
     },
   },
@@ -64,6 +78,8 @@ export const {
   filterByInputCategory,
   FilterByCategoryBtn,
   FilterByBrands,
-  filterByBrandSelect,
+  sortItems,
+  filterItemsByprice,
 } = dataSlice.actions;
+
 export default dataSlice.reducer;

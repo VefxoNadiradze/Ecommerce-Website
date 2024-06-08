@@ -4,7 +4,14 @@ import Logo from "/Images/logo.webp";
 import { GoSearch } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+
+interface IcartData {
+  cart: Product[];
+}
 export default function Header() {
+  let cartItems = useSelector((state: IcartData) => state.cart);
+
   return (
     <HeaderComponent>
       <HeaderTop>
@@ -22,7 +29,8 @@ export default function Header() {
             <Link to={"/"}>
               <FaRegHeart />
             </Link>
-            <Link to={"/"}>
+            <Link to={"/Cart"}>
+              <span className="CartItemsLength">{cartItems.length}</span>
               <FaCartShopping />
             </Link>
           </div>
@@ -101,7 +109,24 @@ const HeaderTop = styled.header`
       column-gap: 10px;
 
       a {
+        position: relative;
         font-size: 17px;
+
+        span {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: -12px;
+          right: -5px;
+          background-color: #b4d984;
+          color: white;
+          font-size: 10px;
+          border-radius: 50%;
+          min-width: 14px;
+          padding: 1.5px;
+          height: 14px;
+        }
       }
     }
 
