@@ -3,8 +3,10 @@ import Productdata from "../data.json";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-
+import { useDispatch } from "react-redux";
+import { addItemsInCart } from "../Redux/cartData";
 export default function Discount() {
+  let dispatch = useDispatch();
   return (
     <>
       <DiscountTitle>Discount</DiscountTitle>
@@ -33,7 +35,12 @@ export default function Discount() {
                     </span>
                     <span className="ItemPrice">${discountItem.price}</span>
                   </div>
-                  <button className="addCartBtn">
+                  <button
+                    className="addCartBtn"
+                    onClick={() => {
+                      dispatch(addItemsInCart(discountItem.id));
+                    }}
+                  >
                     <FaCartShopping />
                   </button>
                 </div>

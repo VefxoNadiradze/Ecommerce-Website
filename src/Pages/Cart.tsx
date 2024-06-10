@@ -2,6 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaRegTrashAlt } from "react-icons/fa";
 import styled from "styled-components";
 import { removeItemsFromCart } from "../Redux/cartData";
+import {
+  incrementQuantity,
+  decrementQuantity,
+  clearCart,
+} from "../Redux/cartData";
+import { useState } from "react";
 
 interface IcartData {
   cart: Product[];
@@ -11,7 +17,15 @@ export default function Cart() {
   let cartItems = useSelector((state: IcartData) => state.cart);
   let dispatch = useDispatch();
 
-  let total = cartItems.reduce((a, b) => a + b.price, 0);
+  // calculating price
+  let [price, setPrice] = useState(
+    cartItems.reduce((a, b) => a + b.price * b.quantity!, 0)
+  );
+
+  //  remove item from cart
+  const handleRemove = (item: any) => {
+    setPrice(price - item.price * item.quantity!);
+  };
 
   return (
     <CartParent>
@@ -29,17 +43,31 @@ export default function Cart() {
                 <p className="itemName">{item.name}</p>
                 <div className="price-deleteBtn">
                   <div className="itemquantity">
-                    <button>-</button>
-                    <span>0</span>
-                    <button>+</button>
+                    <button
+                      onClick={() => {
+                        dispatch(decrementQuantity(item.id));
+                        setPrice((price -= item.price));
+                      }}
+                    >
+                      -
+                    </button>
+                    <span>{item.quantity}</span>
+                    <button
+                      onClick={() => {
+                        dispatch(incrementQuantity(item.id));
+                        setPrice((price += item.price));
+                      }}
+                    >
+                      +
+                    </button>
                   </div>
-
-                  <span>${item.price}</span>
-
+                  {/* if item quantity is true then multiply */}
+                  <span>${item.quantity && item.price * item.quantity}</span>
                   <button
                     className="deletebtn"
                     onClick={() => {
                       dispatch(removeItemsFromCart(item.id));
+                      handleRemove(item);
                     }}
                   >
                     <FaRegTrashAlt />
@@ -53,6 +81,12 @@ export default function Cart() {
 
       {cartItems.length > 0 && (
         <div className="payment-totalprice">
+          <div className="clearCart">
+            <span>Clear cart</span>
+            <button onClick={() => dispatch(clearCart())}>
+              <FaRegTrashAlt />
+            </button>
+          </div>
           {cartItems.length > 0 && (
             <p className="itemslength">
               There is <span>{cartItems.length}</span> item in your cart
@@ -63,7 +97,7 @@ export default function Cart() {
 
           <div className="totalPrice">
             <span>Total price</span>
-            <span>{total}</span>
+            <span>{price}</span>
           </div>
 
           <button className="checkout">checkout</button>
@@ -83,9 +117,25 @@ const CartParent = styled.div`
   .payment-totalprice {
     box-shadow: 0px 0px 10px gray;
     padding: 20px;
-    width: 25%;
+    width: 33%;
     height: max-content;
     border-radius: 5px;
+
+    .clearCart {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+
+      button {
+        background-color: transparent;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
 
     .totalPrice {
       display: flex;
@@ -187,8 +237,6 @@ const CartItem = styled.div`
       gap: 5px;
       box-shadow: 0px 0px 5px gray;
       border-radius: 5px;
-      button {
-      }
     }
   }
 `;

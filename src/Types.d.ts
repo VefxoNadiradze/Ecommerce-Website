@@ -37,6 +37,7 @@ type Product = {
   description?: string;
   ratings: number;
   ratingsCount: number;
+  quantity?: number;
   img: {
     img1: string;
     img2: string;

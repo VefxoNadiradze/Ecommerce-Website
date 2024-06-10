@@ -51,7 +51,7 @@
 
   "discount": [
     {
-      "id": "1",
+      "id": "1discount",
       "category": "Mobile Phone",
       "name": "Samsung Galaxy S23 FE 5G 8 GB 128 GB Duos Light Green",
       "seller": "Samsung",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "id": "2",
+      "id": "2discount",
       "category": "Watch",
       "name": "Apple Watch Series 9 GPS 45mm Midnight Aluminium Case with Midnight Sport Band M/L",
       "seller": "Apple",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "3",
+      "id": "3discount",
       "category": "EARBUDS",
       "name": "Happy Plugs Joy True Wireless Headphones Black",
       "seller": "Happy Plugs",
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "4",
+      "id": "4discount",
       "category": "Laptop",
       "name": "HP Spectre x360 Intel Core Ultra 5-125H 16 GB 1 TB 14 Laptop Slate Blue",
       "seller": "HP",
@@ -112,7 +112,7 @@
     },
 
     {
-      "id": "5",
+      "id": "5discount",
       "category": "bag",
       "name": "Trx, Weight Bag, Power Bag - 9 Kg (20 Lbs)",
       "seller": "Trx",
@@ -128,7 +128,7 @@
     },
 
     {
-      "id": "6",
+      "id": "6discount",
       "category": "Men's shoes",
       "page": "Clothes & Shoes",
 
