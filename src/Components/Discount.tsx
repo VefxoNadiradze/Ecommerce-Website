@@ -3,10 +3,26 @@ import Productdata from "../data.json";
 import { Link } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemsInCart } from "../Redux/cartData";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+interface IcartData {
+  cart: Product[];
+}
 export default function Discount() {
+  let cartItems = useSelector((state: IcartData) => state.cart);
+
   let dispatch = useDispatch();
+
+  let ProductaddNotification = () => {
+    toast.success("item succesfully added to cart");
+  };
+  let ProductaddedNotification = () => {
+    toast.warn("The item is already in the cart");
+  };
+
   return (
     <>
       <DiscountTitle>Discount</DiscountTitle>
@@ -38,7 +54,13 @@ export default function Discount() {
                   <button
                     className="addCartBtn"
                     onClick={() => {
-                      dispatch(addItemsInCart(discountItem.id));
+                      const cartItem = cartItems.find(
+                        (cartItem) => cartItem.id === discountItem.id
+                      );
+                      if (!cartItem) {
+                        dispatch(addItemsInCart(discountItem.id));
+                        ProductaddNotification();
+                      } else [ProductaddedNotification()];
                     }}
                   >
                     <FaCartShopping />
@@ -48,6 +70,7 @@ export default function Discount() {
             </div>
           );
         })}
+        <ToastContainer closeOnClick />
       </DiscountComponent>
     </>
   );

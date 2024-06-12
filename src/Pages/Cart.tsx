@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FaRegTrashAlt } from "react-icons/fa";
 import styled from "styled-components";
 import { removeItemsFromCart } from "../Redux/cartData";
+
 import {
   incrementQuantity,
   decrementQuantity,
@@ -17,13 +18,15 @@ export default function Cart() {
   let cartItems = useSelector((state: IcartData) => state.cart);
   let dispatch = useDispatch();
 
+  console.log(cartItems);
+
   // calculating price
   let [price, setPrice] = useState(
     cartItems.reduce((a, b) => a + b.price * b.quantity!, 0)
   );
 
   //  remove item from cart
-  const handleRemove = (item: any) => {
+  const handleRemove = (item: Product) => {
     setPrice(price - item.price * item.quantity!);
   };
 
@@ -97,7 +100,7 @@ export default function Cart() {
 
           <div className="totalPrice">
             <span>Total price</span>
-            <span>{price}</span>
+            <span>${price}</span>
           </div>
 
           <button className="checkout">checkout</button>
@@ -112,7 +115,8 @@ const CartParent = styled.div`
   padding: 50px 20px;
   margin-top: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
 
   .payment-totalprice {
     box-shadow: 0px 0px 10px gray;
@@ -197,6 +201,7 @@ const CartItem = styled.div`
   box-shadow: 0px 0px 10px gray;
   padding: 10px;
   border-radius: 5px;
+  height: 100%;
 
   img {
     display: block;

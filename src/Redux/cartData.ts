@@ -6,7 +6,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItemsInCart: (state, action: PayloadAction<string>) => {
+    addItemsInCart: (state, action) => {
       // finding the shoping item which is clicked
       let clickedItem = productData.products.find(
         (item) => item.id === action.payload
@@ -17,15 +17,16 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
 
-      // adding shopping items in the cart
       if (clickedItem) {
-        state.push({ ...clickedItem, quantity: 1 });
+        state.push({ ...clickedItem!, quantity: 1 });
       }
+
       // adding discountItems items in the cart
       if (discountItem) {
         state.push({ ...discountItem, quantity: 1 });
       }
     },
+    // removing single item from cart
     removeItemsFromCart: (state, action: PayloadAction<string>) => {
       const findIndex = state.findIndex((item) => item.id === action.payload);
       state.splice(findIndex, 1);

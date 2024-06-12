@@ -5,6 +5,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemsInCart } from "../Redux/cartData";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Idatas {
   datas: Product[];
@@ -12,13 +14,25 @@ interface Idatas {
 interface IState {
   arrangement: string;
 }
+interface IcartData {
+  cart: Product[];
+}
 export default function Discount() {
   let dispatch = useDispatch();
   const dataSelector = useSelector((state: Idatas) => state.datas);
+  let cartItems = useSelector((state: IcartData) => state.cart);
+
   const arrangementSelector = useSelector((state: IState) => state.arrangement);
 
   const { page } = useParams();
   let product = dataSelector.filter((item: Product) => item.page === page);
+
+  let ProductaddNotification = () => {
+    toast.success("item succesfully added to cart");
+  };
+  let ProductaddedNotification = () => {
+    toast.warn("The item is already in the cart");
+  };
 
   return (
     <ProductsPar arrangementselector={arrangementSelector}>
@@ -26,37 +40,51 @@ export default function Discount() {
       {product.length < 1 && <ErrorDiv>Product not found</ErrorDiv>}
       {product.map((item: Product) => {
         return (
-          <ShoppingItem arrangementselector={arrangementSelector} key={item.id}>
-            <div className="itemHead">
-              <button className="wishlistBtn">
-                <FaRegHeart />
-              </button>
-            </div>
-            <Link to={"/"}>
-              <img
-                src={item.img.img1}
-                alt="product item img"
-                className="ItemImg"
-              />
-            </Link>
-            <div className="productOptions">
-              <h3>{item.name}</h3>
-              <div className="price-addCartBtn">
-                <span>${item.price}</span>
-
-                <button
-                  className="addCartBtn"
-                  onClick={() => {
-                    dispatch(addItemsInCart(item.id));
-                  }}
-                >
-                  <FaCartShopping />
+          <>
+            <ShoppingItem
+              arrangementselector={arrangementSelector}
+              key={item.id}
+            >
+              <div className="itemHead">
+                <button className="wishlistBtn">
+                  <FaRegHeart />
                 </button>
               </div>
-            </div>
-          </ShoppingItem>
+              <Link to={"/"}>
+                <img
+                  src={item.img.img1}
+                  alt="product item img"
+                  className="ItemImg"
+                />
+              </Link>
+              <div className="productOptions">
+                <h3>{item.name}</h3>
+                <div className="price-addCartBtn">
+                  <span>${item.price}</span>
+
+                  <button
+                    className="addCartBtn"
+                    onClick={() => {
+                      const cartItem = cartItems.find(
+                        (cartItem) => cartItem.id === item.id
+                      );
+                      if (!cartItem) {
+                        dispatch(addItemsInCart(item.id));
+                        ProductaddNotification();
+                      } else {
+                        ProductaddedNotification();
+                      }
+                    }}
+                  >
+                    <FaCartShopping />
+                  </button>
+                </div>
+              </div>
+            </ShoppingItem>
+          </>
         );
       })}
+      <ToastContainer closeOnClick />
     </ProductsPar>
   );
 }
@@ -82,6 +110,7 @@ const ProductsPar = styled.div<{ arrangementselector: string }>`
   height: max-content;
   gap: 20px;
 `;
+
 const ShoppingItem = styled.div<{ arrangementselector: string }>`
   position: relative;
   display: flex;
