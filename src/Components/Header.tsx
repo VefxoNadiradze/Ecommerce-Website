@@ -6,11 +6,13 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 
-interface IcartData {
+interface Idata {
   cart: Product[];
+  wishlist: Product[];
 }
 export default function Header() {
-  let cartItems = useSelector((state: IcartData) => state.cart);
+  let cartItems = useSelector((state: Idata) => state.cart);
+  let wishlistItems = useSelector((state: Idata) => state.wishlist);
 
   return (
     <HeaderComponent>
@@ -26,7 +28,8 @@ export default function Header() {
 
         <div className="login-cart">
           <div className="cart-wishlist">
-            <Link to={"/"}>
+            <Link to={"/Wishlist"}>
+              <span className="CartItemsLength">{wishlistItems.length}</span>
               <FaRegHeart />
             </Link>
             <Link to={"/Cart"}>

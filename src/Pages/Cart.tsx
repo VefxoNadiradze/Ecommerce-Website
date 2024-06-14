@@ -37,9 +37,9 @@ export default function Cart() {
       )}
 
       <CartItemsPar>
-        {cartItems.map((item, index) => {
+        {cartItems.map((item) => {
           return (
-            <CartItem key={index}>
+            <CartItem key={item.id}>
               <img src={item.img.img1} alt="" />
 
               <div className="itemDescription">
@@ -116,6 +116,8 @@ const CartParent = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  background-color: #f6f9fc;
+
   gap: 50px;
 
   .payment-totalprice {

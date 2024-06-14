@@ -8,6 +8,7 @@ import Shopping from "./Pages/Shopping.tsx";
 import { Provider } from "react-redux";
 import store from "./Redux/store.ts";
 import Cart from "./Pages/Cart.tsx";
+import Wishlist from "./Pages/Wishlist.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/Wishlist",
+        element: <Wishlist />,
       },
     ],
   },

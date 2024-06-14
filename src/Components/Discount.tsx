@@ -7,12 +7,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItemsInCart } from "../Redux/cartData";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { addWishlistitems } from "../Redux/wishlistSlice";
 
-interface IcartData {
+interface IData {
   cart: Product[];
+  wishlist: Product[];
 }
 export default function Discount() {
-  let cartItems = useSelector((state: IcartData) => state.cart);
+  let cartItems = useSelector((state: IData) => state.cart);
+  let wishlistItems = useSelector((state: IData) => state.wishlist);
 
   let dispatch = useDispatch();
 
@@ -21,6 +24,13 @@ export default function Discount() {
   };
   let ProductaddedNotification = () => {
     toast.warn("The item is already in the cart");
+  };
+
+  let wishListProductaddNotification = () => {
+    toast.success("item succesfully added to wishlist");
+  };
+  let wishListProductaddedNotification = () => {
+    toast.warn("The item is already in the wishlist");
   };
 
   return (
@@ -33,7 +43,20 @@ export default function Discount() {
             <div key={discountItem.id} className="discountCard">
               <div className="cardHeader">
                 <span>50% Off</span>
-                <button className="wishlistBtn">
+                <button
+                  onClick={() => {
+                    const wishlistItem = wishlistItems.find(
+                      (wishlistItm) => wishlistItm.id === discountItem.id
+                    );
+                    if (!wishlistItem) {
+                      dispatch(addWishlistitems(discountItem.id));
+                      wishListProductaddNotification();
+                    } else {
+                      wishListProductaddedNotification();
+                    }
+                  }}
+                  className="wishlistBtn"
+                >
                   <FaRegHeart />
                 </button>
               </div>

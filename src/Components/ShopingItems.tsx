@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItemsInCart } from "../Redux/cartData";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { addWishlistitems } from "../Redux/wishlistSlice";
 
 interface Idatas {
   datas: Product[];
@@ -14,13 +15,15 @@ interface Idatas {
 interface IState {
   arrangement: string;
 }
-interface IcartData {
+interface IData {
   cart: Product[];
+  wishlist: Product[];
 }
 export default function Discount() {
   let dispatch = useDispatch();
   const dataSelector = useSelector((state: Idatas) => state.datas);
-  let cartItems = useSelector((state: IcartData) => state.cart);
+  let cartItems = useSelector((state: IData) => state.cart);
+  let wishlistItems = useSelector((state: IData) => state.wishlist);
 
   const arrangementSelector = useSelector((state: IState) => state.arrangement);
 
@@ -34,54 +37,69 @@ export default function Discount() {
     toast.warn("The item is already in the cart");
   };
 
+  let wishListProductaddNotification = () => {
+    toast.success("item succesfully added to wishlist");
+  };
+  let wishListProductaddedNotification = () => {
+    toast.warn("The item is already in the wishlist");
+  };
+
   return (
     <ProductsPar arrangementselector={arrangementSelector}>
       {/* if product length is less then 1 display the error */}
       {product.length < 1 && <ErrorDiv>Product not found</ErrorDiv>}
-      {product.map((item: Product) => {
+      {product.map((item: Product, index) => {
         return (
-          <>
-            <ShoppingItem
-              arrangementselector={arrangementSelector}
-              key={item.id}
-            >
-              <div className="itemHead">
-                <button className="wishlistBtn">
-                  <FaRegHeart />
+          <ShoppingItem key={index} arrangementselector={arrangementSelector}>
+            <div className="itemHead">
+              <button
+                onClick={() => {
+                  const wishlistItem = wishlistItems.find(
+                    (wishlistItm) => wishlistItm.id === item.id
+                  );
+                  if (!wishlistItem) {
+                    dispatch(addWishlistitems(item.id));
+                    wishListProductaddNotification();
+                  } else {
+                    wishListProductaddedNotification();
+                  }
+                }}
+                className="wishlistBtn"
+              >
+                <FaRegHeart />
+              </button>
+            </div>
+            <Link to={"/"}>
+              <img
+                src={item.img.img1}
+                alt="product item img"
+                className="ItemImg"
+              />
+            </Link>
+            <div className="productOptions">
+              <h3>{item.name}</h3>
+              <div className="price-addCartBtn">
+                <span>${item.price}</span>
+
+                <button
+                  className="addCartBtn"
+                  onClick={() => {
+                    const cartItem = cartItems.find(
+                      (cartItem) => cartItem.id === item.id
+                    );
+                    if (!cartItem) {
+                      dispatch(addItemsInCart(item.id));
+                      ProductaddNotification();
+                    } else {
+                      ProductaddedNotification();
+                    }
+                  }}
+                >
+                  <FaCartShopping />
                 </button>
               </div>
-              <Link to={"/"}>
-                <img
-                  src={item.img.img1}
-                  alt="product item img"
-                  className="ItemImg"
-                />
-              </Link>
-              <div className="productOptions">
-                <h3>{item.name}</h3>
-                <div className="price-addCartBtn">
-                  <span>${item.price}</span>
-
-                  <button
-                    className="addCartBtn"
-                    onClick={() => {
-                      const cartItem = cartItems.find(
-                        (cartItem) => cartItem.id === item.id
-                      );
-                      if (!cartItem) {
-                        dispatch(addItemsInCart(item.id));
-                        ProductaddNotification();
-                      } else {
-                        ProductaddedNotification();
-                      }
-                    }}
-                  >
-                    <FaCartShopping />
-                  </button>
-                </div>
-              </div>
-            </ShoppingItem>
-          </>
+            </div>
+          </ShoppingItem>
         );
       })}
       <ToastContainer closeOnClick />

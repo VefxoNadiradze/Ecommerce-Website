@@ -51,7 +51,7 @@
 
   "discount": [
     {
-      "id": "1discount",
+      "id": "1d1",
       "category": "Mobile Phone",
       "name": "Samsung Galaxy S23 FE 5G 8 GB 128 GB Duos Light Green",
       "seller": "Samsung",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "id": "2discount",
+      "id": "2d2",
       "category": "Watch",
       "name": "Apple Watch Series 9 GPS 45mm Midnight Aluminium Case with Midnight Sport Band M/L",
       "seller": "Apple",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "3discount",
+      "id": "3d3",
       "category": "EARBUDS",
       "name": "Happy Plugs Joy True Wireless Headphones Black",
       "seller": "Happy Plugs",
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "4discount",
+      "id": "4d4",
       "category": "Laptop",
       "name": "HP Spectre x360 Intel Core Ultra 5-125H 16 GB 1 TB 14 Laptop Slate Blue",
       "seller": "HP",
@@ -112,7 +112,7 @@
     },
 
     {
-      "id": "5discount",
+      "id": "5d5",
       "category": "bag",
       "name": "Trx, Weight Bag, Power Bag - 9 Kg (20 Lbs)",
       "seller": "Trx",
@@ -128,10 +128,9 @@
     },
 
     {
-      "id": "6discount",
+      "id": "6d6",
       "category": "Men's shoes",
       "page": "Clothes & Shoes",
-
       "name": "Y-3 S-GENDO RUN",
       "seller": "Adidas",
       "oldprice": 200,
