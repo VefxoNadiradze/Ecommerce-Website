@@ -8,6 +8,8 @@ import { addItemsInCart } from "../Redux/cartData";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addWishlistitems } from "../Redux/wishlistSlice";
+import { TbZoom } from "react-icons/tb";
+import { useState } from "react";
 
 interface IData {
   cart: Product[];
@@ -33,32 +35,51 @@ export default function Discount() {
     toast.warn("The item is already in the wishlist");
   };
 
+  let [zoomImg, setZoomImg] = useState<string | undefined>();
+  const ImageZoom = (id: string) => {
+    let findIndex = Productdata.discount.find((item) => item.id === id);
+
+    setZoomImg(findIndex?.img.img1);
+  };
+
   return (
     <>
       <DiscountTitle>Discount</DiscountTitle>
-
+      {zoomImg && (
+        <ZoomImgPar onClick={() => setZoomImg("")}>
+          <img src={zoomImg} onClick={(e) => e.stopPropagation()} />
+        </ZoomImgPar>
+      )}
       <DiscountComponent>
         {Productdata.discount.map((discountItem) => {
           return (
             <div key={discountItem.id} className="discountCard">
               <div className="cardHeader">
                 <span>50% Off</span>
-                <button
-                  onClick={() => {
-                    const wishlistItem = wishlistItems.find(
-                      (wishlistItm) => wishlistItm.id === discountItem.id
-                    );
-                    if (!wishlistItem) {
-                      dispatch(addWishlistitems(discountItem.id));
-                      wishListProductaddNotification();
-                    } else {
-                      wishListProductaddedNotification();
-                    }
-                  }}
-                  className="wishlistBtn"
-                >
-                  <FaRegHeart />
-                </button>
+                <div className="zoom-wish">
+                  <button
+                    onClick={() => {
+                      const wishlistItem = wishlistItems.find(
+                        (wishlistItm) => wishlistItm.id === discountItem.id
+                      );
+                      if (!wishlistItem) {
+                        dispatch(addWishlistitems(discountItem.id));
+                        wishListProductaddNotification();
+                      } else {
+                        wishListProductaddedNotification();
+                      }
+                    }}
+                    className="wishlistBtn"
+                  >
+                    <FaRegHeart />
+                  </button>
+                  <button
+                    className="zoomBtn"
+                    onClick={() => ImageZoom(discountItem.id)}
+                  >
+                    <TbZoom />
+                  </button>
+                </div>
               </div>
               <Link to={"/"}>
                 <img src={discountItem.img.img1} alt="product item image" />
@@ -99,6 +120,23 @@ export default function Discount() {
   );
 }
 
+const ZoomImgPar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #0000007f;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 35%;
+    height: 65%;
+  }
+`;
 const DiscountComponent = styled.div`
   max-width: 100%;
   margin: 30px auto 0 auto;
@@ -117,7 +155,10 @@ const DiscountComponent = styled.div`
     box-shadow: 0px 0px 10px gray;
     border-radius: 5px;
 
-    &:hover .cardHeader .wishlistBtn {
+    &:hover .cardHeader .zoom-wish .wishlistBtn {
+      opacity: 1;
+    }
+    &:hover .cardHeader .zoom-wish .zoomBtn {
       opacity: 1;
     }
 
@@ -134,14 +175,29 @@ const DiscountComponent = styled.div`
         font-size: 12px;
         border-radius: 15px;
       }
-      .wishlistBtn {
-        background-color: transparent;
-        border: none;
-        padding: 5px;
-        cursor: pointer;
-        font-size: 17px;
-        opacity: 0;
-        transition: 0.5s ease;
+      .zoom-wish {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .wishlistBtn {
+          background-color: transparent;
+          border: none;
+          padding: 5px;
+          cursor: pointer;
+          font-size: 17px;
+          opacity: 0;
+          transition: 0.5s ease;
+        }
+
+        .zoomBtn {
+          padding: 5px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 17px;
+          opacity: 0;
+          transition: 0.5s ease;
+        }
       }
     }
 

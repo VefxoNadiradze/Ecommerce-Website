@@ -8,6 +8,9 @@ import { addItemsInCart } from "../Redux/cartData";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addWishlistitems } from "../Redux/wishlistSlice";
+import { TbZoom } from "react-icons/tb";
+import data from "../data.json";
+import { useState } from "react";
 
 interface Idatas {
   datas: Product[];
@@ -45,30 +48,50 @@ export default function Discount() {
     toast.warn("The item is already in the wishlist");
   };
 
+  let [zoomImg, setZoomImg] = useState<string | undefined>();
+  const ImageZoom = (id: string) => {
+    let findIndex = data.products.find((item) => item.id === id);
+
+    setZoomImg(findIndex?.img.img1);
+  };
+
   return (
     <ProductsPar arrangementselector={arrangementSelector}>
       {/* if product length is less then 1 display the error */}
       {product.length < 1 && <ErrorDiv>Product not found</ErrorDiv>}
+
+      {zoomImg && (
+        <ZoomImgPar onClick={() => setZoomImg("")}>
+          <img src={zoomImg} onClick={(e) => e.stopPropagation()} />
+        </ZoomImgPar>
+      )}
+
       {product.map((item: Product, index) => {
         return (
           <ShoppingItem key={index} arrangementselector={arrangementSelector}>
             <div className="itemHead">
-              <button
-                onClick={() => {
-                  const wishlistItem = wishlistItems.find(
-                    (wishlistItm) => wishlistItm.id === item.id
-                  );
-                  if (!wishlistItem) {
-                    dispatch(addWishlistitems(item.id));
-                    wishListProductaddNotification();
-                  } else {
-                    wishListProductaddedNotification();
-                  }
-                }}
-                className="wishlistBtn"
-              >
-                <FaRegHeart />
-              </button>
+              <div className="zoom-wish">
+                <button
+                  onClick={() => {
+                    const wishlistItem = wishlistItems.find(
+                      (wishlistItm) => wishlistItm.id === item.id
+                    );
+                    if (!wishlistItem) {
+                      dispatch(addWishlistitems(item.id));
+                      wishListProductaddNotification();
+                    } else {
+                      wishListProductaddedNotification();
+                    }
+                  }}
+                  className="wishlistBtn"
+                >
+                  <FaRegHeart />
+                </button>
+
+                <button className="zoomBtn" onClick={() => ImageZoom(item.id)}>
+                  <TbZoom />
+                </button>
+              </div>
             </div>
             <Link to={"/"}>
               <img
@@ -108,6 +131,24 @@ export default function Discount() {
   );
 }
 
+const ZoomImgPar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #0000007f;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 35%;
+    height: 65%;
+  }
+`;
+
 const ErrorDiv = styled.div`
   position: absolute;
   left: 50%;
@@ -139,22 +180,41 @@ const ShoppingItem = styled.div<{ arrangementselector: string }>`
   box-shadow: 0px 0px 10px gray;
   padding: 10px;
   border-radius: 5px;
-  &:hover .itemHead .wishlistBtn {
+  &:hover .itemHead .zoom-wish .wishlistBtn {
+    opacity: 1;
+  }
+  &:hover .itemHead .zoom-wish .zoomBtn {
     opacity: 1;
   }
   .itemHead {
     width: ${(props) => props.arrangementselector === "grid" && "100%"};
     margin-top: ${(props) => props.arrangementselector === "list" && "-20px"};
-    text-align: right;
     order: ${(props) => props.arrangementselector === "list" && "1"};
-    .wishlistBtn {
-      background-color: transparent;
-      border: none;
-      padding: 5px;
-      cursor: pointer;
-      font-size: 17px;
-      opacity: ${(props) => props.arrangementselector === "grid" && "0"};
-      transition: 0.5s ease;
+
+    .zoom-wish {
+      display: flex;
+      justify-content: right;
+      align-items: center;
+      gap: 5px;
+      .wishlistBtn {
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        font-size: 17px;
+        opacity: 0;
+        transition: 0.5s ease;
+      }
+
+      .zoomBtn {
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+        opacity: 0;
+        transition: 0.5s ease;
+      }
     }
   }
 
