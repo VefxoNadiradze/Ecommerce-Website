@@ -28,6 +28,7 @@ export default function Discount() {
   const arrangementSelector = useSelector((state: IState) => state.arrangement);
 
   const { page } = useParams();
+
   let product = dataSelector.filter((item: Product) => item.page === page);
 
   let ProductaddNotification = () => {

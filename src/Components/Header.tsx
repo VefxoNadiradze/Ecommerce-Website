@@ -27,6 +27,14 @@ export default function Header() {
         </form>
 
         <div className="login-cart">
+          <div className="signIn-signUp">
+            <Link to={"/Login"} className="LoginBtn">
+              Login
+            </Link>
+            <Link to={"/Register"} className="registerBtn">
+              Registration
+            </Link>
+          </div>
           <div className="cart-wishlist">
             <Link to={"/Wishlist"}>
               <span className="CartItemsLength">{wishlistItems.length}</span>
@@ -36,11 +44,6 @@ export default function Header() {
               <span className="CartItemsLength">{cartItems.length}</span>
               <FaCartShopping />
             </Link>
-          </div>
-
-          <div className="signIn-signUp">
-            <button className="SignInbtn">Sign in</button>
-            <button className="SignUpbtn">Sign up</button>
           </div>
         </div>
       </HeaderTop>
@@ -138,16 +141,19 @@ const HeaderTop = styled.header`
       align-items: center;
       column-gap: 15px;
 
-      button {
+      a {
+        text-decoration: none;
         cursor: pointer;
         background-color: transparent;
         border: none;
+        letter-spacing: 1px;
+        font-weight: bold;
+        color: black;
       }
 
-      .SignInbtn {
+      .registerBtn {
         background-color: yellow;
         padding: 10px;
-        font-weight: bold;
         border-radius: 5px;
         box-shadow: 0px 0px 2px gray;
       }
@@ -156,7 +162,7 @@ const HeaderTop = styled.header`
 `;
 
 const HeaderComponent = styled.header`
-  padding: 0 20px;
+  padding: 0 50px;
 
   nav {
     ul {

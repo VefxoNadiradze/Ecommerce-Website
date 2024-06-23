@@ -18,8 +18,6 @@ export default function Cart() {
   let cartItems = useSelector((state: IcartData) => state.cart);
   let dispatch = useDispatch();
 
-  console.log(cartItems);
-
   // calculating price
   let [price, setPrice] = useState(
     cartItems.reduce((a, b) => a + b.price * b.quantity!, 0)
