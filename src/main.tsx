@@ -10,6 +10,7 @@ import store from "./Redux/store.ts";
 import Cart from "./Pages/Cart.tsx";
 import Wishlist from "./Pages/Wishlist.tsx";
 import RegisterLogin from "./Pages/RegisterLogin.tsx";
+import ItemDetails from "./Pages/ItemDetails.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/Wishlist",
         element: <Wishlist />,
+      },
+      {
+        path: "/item/:id",
+        element: <ItemDetails />,
       },
     ],
   },

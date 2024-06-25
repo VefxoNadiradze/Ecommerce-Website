@@ -93,7 +93,7 @@ export default function Discount() {
                 </button>
               </div>
             </div>
-            <Link to={"/"}>
+            <Link to={`/item/${item.id}`}>
               <img
                 src={item.img.img1}
                 alt="product item img"
