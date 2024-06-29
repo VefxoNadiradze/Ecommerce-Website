@@ -11,6 +11,7 @@ import Cart from "./Pages/Cart.tsx";
 import Wishlist from "./Pages/Wishlist.tsx";
 import RegisterLogin from "./Pages/RegisterLogin.tsx";
 import ItemDetails from "./Pages/ItemDetails.tsx";
+import PageNotFound from "./Pages/PageNotFound.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,6 +42,11 @@ const router = createBrowserRouter([
   {
     path: "/:LoginRegister",
     element: <RegisterLogin />,
+  },
+
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 

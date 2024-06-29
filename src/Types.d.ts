@@ -11,6 +11,11 @@ type Offer = {
   bgColor: string;
 };
 
+interface Review {
+  name: string;
+  text: string;
+}
+
 type DiscountItem = {
   id: string;
   category: string;
@@ -21,13 +26,11 @@ type DiscountItem = {
   description: string;
   ratings: number;
   ratingsCount: number;
-  img: {
-    img1: string;
-    img2: string;
-  };
+  review: Review[];
+  img: string[];
 };
 
-type Product = {
+interface Product {
   id: string;
   category: string;
   page?: string;
@@ -38,8 +41,6 @@ type Product = {
   ratings: number;
   ratingsCount: number;
   quantity?: number;
-  img: {
-    img1: string;
-    img2: string;
-  };
-};
+  review: Review[];
+  img: string[];
+}

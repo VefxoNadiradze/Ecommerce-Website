@@ -46,7 +46,7 @@ export default function Wishlist() {
                   <FaRegTrashAlt />
                 </button>
 
-                <img src={item.img.img1} alt="" />
+                <img src={item.img[0]} alt="" />
               </div>
               <div className="productOptions">
                 <h3>{item.name}</h3>

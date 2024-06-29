@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { addWishlistitems } from "../Redux/wishlistSlice";
 import { TbZoom } from "react-icons/tb";
 import { useState } from "react";
+import { IoCloseSharp } from "react-icons/io5";
 
 interface IData {
   cart: Product[];
@@ -39,7 +40,7 @@ export default function Discount() {
   const ImageZoom = (id: string) => {
     let findIndex = Productdata.discount.find((item) => item.id === id);
 
-    setZoomImg(findIndex?.img.img1);
+    setZoomImg(findIndex?.img[0]);
   };
 
   return (
@@ -47,6 +48,9 @@ export default function Discount() {
       <DiscountTitle>Discount</DiscountTitle>
       {zoomImg && (
         <ZoomImgPar onClick={() => setZoomImg("")}>
+          <button className="closeZoom">
+            <IoCloseSharp />
+          </button>
           <img src={zoomImg} onClick={(e) => e.stopPropagation()} />
         </ZoomImgPar>
       )}
@@ -82,7 +86,7 @@ export default function Discount() {
                 </div>
               </div>
               <Link to={`/item/${discountItem.id}`}>
-                <img src={discountItem.img.img1} alt="product item image" />
+                <img src={discountItem.img[0]} alt="product item image" />
               </Link>
 
               <div className="ItemOptions">
@@ -131,7 +135,16 @@ const ZoomImgPar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  .closeZoom {
+    position: absolute;
+    right: 150px;
+    top: 50px;
+    color: white;
+    font-size: 35px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
   img {
     width: 35%;
     height: 65%;

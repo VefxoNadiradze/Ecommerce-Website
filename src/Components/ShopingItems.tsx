@@ -11,6 +11,7 @@ import { addWishlistitems } from "../Redux/wishlistSlice";
 import { TbZoom } from "react-icons/tb";
 import data from "../data.json";
 import { useState } from "react";
+import { IoCloseSharp } from "react-icons/io5";
 
 interface Idatas {
   datas: Product[];
@@ -52,7 +53,7 @@ export default function Discount() {
   const ImageZoom = (id: string) => {
     let findIndex = data.products.find((item) => item.id === id);
 
-    setZoomImg(findIndex?.img.img1);
+    setZoomImg(findIndex?.img[0]);
   };
 
   return (
@@ -62,6 +63,9 @@ export default function Discount() {
 
       {zoomImg && (
         <ZoomImgPar onClick={() => setZoomImg("")}>
+          <button className="closeZoom">
+            <IoCloseSharp />
+          </button>
           <img src={zoomImg} onClick={(e) => e.stopPropagation()} />
         </ZoomImgPar>
       )}
@@ -95,7 +99,7 @@ export default function Discount() {
             </div>
             <Link to={`/item/${item.id}`}>
               <img
-                src={item.img.img1}
+                src={item.img[0]}
                 alt="product item img"
                 className="ItemImg"
               />
@@ -142,6 +146,17 @@ const ZoomImgPar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .closeZoom {
+    position: absolute;
+    right: 150px;
+    top: 50px;
+    color: white;
+    font-size: 35px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
 
   img {
     width: 35%;

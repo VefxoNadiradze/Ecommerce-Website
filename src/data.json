@@ -60,10 +60,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4.5,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/samsunggalaxys23lightgreen-1.jpg",
-        "img2": "https://media.veli.store/media/product/samsunggalaxys23lightgreen-4.jpg  "
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/samsunggalaxys23lightgreen-1.jpg",
+        "https://media.veli.store/media/product/samsunggalaxys23lightgreen-4.jpg  "
+      ]
     },
     {
       "id": "2d2",
@@ -75,10 +85,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4.5,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/applewatchseries9watchbandsilione-22.jpeg",
-        "img2": "https://media.veli.store/media/product/s9midn-4.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/applewatchseries9watchbandsilione-22.jpeg",
+        "https://media.veli.store/media/product/s9midn-4.jpg"
+      ]
     },
     {
       "id": "3d3",
@@ -88,12 +108,22 @@
       "oldprice": 200,
       "price": 100,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 4.7,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/Happy_Plugs_Joy_True_Wireless_Headphones_Black_4.jpg",
-        "img2": "https://media.veli.store/media/product/Happy_Plugs_Joy_True_Wireless_Headphones_Black_1.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/Happy_Plugs_Joy_True_Wireless_Headphones_Black_4.jpg",
+        "https://media.veli.store/media/product/Happy_Plugs_Joy_True_Wireless_Headphones_Black_1.jpg"
+      ]
     },
     {
       "id": "4d4",
@@ -103,12 +133,22 @@
       "oldprice": 700,
       "price": 350,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 4.8,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/198122162154.jpg",
-        "img2": "https://media.veli.store/media/__sized__/product/198122162154-3-thumbnail-50x50-95.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/198122162154.jpg",
+        "https://media.veli.store/media/__sized__/product/198122162154-3-thumbnail-50x50-95.jpg"
+      ]
     },
 
     {
@@ -119,12 +159,22 @@
       "oldprice": 70,
       "price": 35,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 4.5,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/847585009352-2.jpeg",
-        "img2": "https://media.veli.store/media/__sized__/product/847585009352-thumbnail-50x50.png"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/847585009352-2.jpeg",
+        "https://media.veli.store/media/__sized__/product/847585009352-thumbnail-50x50.png"
+      ]
     },
 
     {
@@ -138,10 +188,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://dks.scene7.com/is/image/GolfGalaxy/23ADIMDBRKPNTXXXXALB_Wonder_White?qlt=70&wid=600&fmt=pjpeg&op_sharpen=1",
-        "img2": "https://dks.scene7.com/is/image/GolfGalaxy/S2425M113_WonderWhite_MODBCK?wid=2000&fmt=pjpeg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://dks.scene7.com/is/image/GolfGalaxy/23ADIMDBRKPNTXXXXALB_Wonder_White?qlt=70&wid=600&fmt=pjpeg&op_sharpen=1",
+        "https://dks.scene7.com/is/image/GolfGalaxy/S2425M113_WonderWhite_MODBCK?wid=2000&fmt=pjpeg"
+      ]
     }
   ],
 
@@ -156,10 +216,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3725,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e564ebef5c14d868ca707b4dabdecd0_9366/Gazelle_Shoes_Green_IG1634_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f7d4a7947e04cac9d92d533438610c2_9366/Gazelle_Shoes_Green_IG1634_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9e564ebef5c14d868ca707b4dabdecd0_9366/Gazelle_Shoes_Green_IG1634_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9f7d4a7947e04cac9d92d533438610c2_9366/Gazelle_Shoes_Green_IG1634_01_standard.jpg"
+      ]
     },
     {
       "id": "2",
@@ -172,10 +242,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 5,
       "ratingsCount": 4355,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/697f9cdecb844ba9ae941f57fe697dd1_9366/Grand_Court_Shoes_White_ID2951_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ff1e264b0c34c27a1d0f3ec3cfc6d56_9366/Grand_Court_Shoes_White_ID2951_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/697f9cdecb844ba9ae941f57fe697dd1_9366/Grand_Court_Shoes_White_ID2951_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7ff1e264b0c34c27a1d0f3ec3cfc6d56_9366/Grand_Court_Shoes_White_ID2951_01_standard.jpg"
+      ]
     },
     {
       "id": "3",
@@ -187,10 +267,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/efaec83b942a4f0fab6840e6e63ead82_9366/UBounce_DNA_Shoes_Brown_ID5963_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0cca9e5f6e2a4b89a20a7a4f47627a44_9366/UBounce_DNA_Shoes_Brown_ID5963_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/efaec83b942a4f0fab6840e6e63ead82_9366/UBounce_DNA_Shoes_Brown_ID5963_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0cca9e5f6e2a4b89a20a7a4f47627a44_9366/UBounce_DNA_Shoes_Brown_ID5963_01_standard.jpg"
+      ]
     },
     {
       "id": "4",
@@ -202,10 +292,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/04d951567cd04f8d9e0d3ae7bbcdb299_9366/Superstar_XLG_Shoes_Pink_ID5809_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b0f37095e78449059d0757ba49d57ab6_9366/Superstar_XLG_Shoes_Pink_ID5809_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/04d951567cd04f8d9e0d3ae7bbcdb299_9366/Superstar_XLG_Shoes_Pink_ID5809_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b0f37095e78449059d0757ba49d57ab6_9366/Superstar_XLG_Shoes_Pink_ID5809_01_standard.jpg"
+      ]
     },
     {
       "id": "5",
@@ -217,10 +317,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd02095c0d8c40229dfb4ee678f3ce42_9366/Ultraboost_1.0_Shoes_White_ID5949_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ddcbf13719e24d4694c914566f069140_9366/Ultraboost_1.0_Shoes_White_ID5949_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cd02095c0d8c40229dfb4ee678f3ce42_9366/Ultraboost_1.0_Shoes_White_ID5949_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ddcbf13719e24d4694c914566f069140_9366/Ultraboost_1.0_Shoes_White_ID5949_01_standard.jpg"
+      ]
     },
     {
       "id": "6",
@@ -232,10 +342,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4bd07af557b4534b3277ad0a55610fe_9366/OZMILLEN_Shoes_Beige_IF6552_02_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/20c2eb5eda3e4776948ac51e259bc05a_9366/OZMILLEN_Shoes_Beige_IF6552_01_standard.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4bd07af557b4534b3277ad0a55610fe_9366/OZMILLEN_Shoes_Beige_IF6552_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/20c2eb5eda3e4776948ac51e259bc05a_9366/OZMILLEN_Shoes_Beige_IF6552_01_standard.jpg"
+      ]
     },
 
     {
@@ -248,10 +368,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/468e759be8eb4d14b679afc8004a08c0_9366/Adicolor_Classics_SST_Track_Pants_Green_IK3515_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ef0bc95c9cfc45729e10afc8004a10a4_9366/Adicolor_Classics_SST_Track_Pants_Green_IK3515_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/468e759be8eb4d14b679afc8004a08c0_9366/Adicolor_Classics_SST_Track_Pants_Green_IK3515_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ef0bc95c9cfc45729e10afc8004a10a4_9366/Adicolor_Classics_SST_Track_Pants_Green_IK3515_23_hover_model.jpg"
+      ]
     },
 
     {
@@ -264,10 +394,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a79d390b599b4399b669272524bff241_9366/Designed_for_Training_Workout_Pants_Green_IS3371_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ab8db005c57b40d5a40c393dc4fc0911_9366/Designed_for_Training_Workout_Pants_Green_IS3371_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a79d390b599b4399b669272524bff241_9366/Designed_for_Training_Workout_Pants_Green_IS3371_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ab8db005c57b40d5a40c393dc4fc0911_9366/Designed_for_Training_Workout_Pants_Green_IS3371_23_hover_model.jpg"
+      ]
     },
     {
       "id": "9",
@@ -280,10 +420,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/73d1bcc3109a4950bdac36fa55afd059_9366/Adicolor_Classics_Adibreak_Pants_Blue_IM8223_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7b05d548f3cf4840a6238f18a4ab247b_9366/Adicolor_Classics_Adibreak_Pants_Blue_IM8223_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/73d1bcc3109a4950bdac36fa55afd059_9366/Adicolor_Classics_Adibreak_Pants_Blue_IM8223_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7b05d548f3cf4840a6238f18a4ab247b_9366/Adicolor_Classics_Adibreak_Pants_Blue_IM8223_23_hover_model.jpg"
+      ]
     },
 
     {
@@ -296,10 +446,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d57ecf4c104444d89d9f2bdc2e67a9aa_9366/adidas_Originals_3-Stripes_Cargo_Pants_White_JH3176_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e978239f590242f5a659822042f22ecb_9366/adidas_Originals_3-Stripes_Cargo_Pants_White_JH3176_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d57ecf4c104444d89d9f2bdc2e67a9aa_9366/adidas_Originals_3-Stripes_Cargo_Pants_White_JH3176_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e978239f590242f5a659822042f22ecb_9366/adidas_Originals_3-Stripes_Cargo_Pants_White_JH3176_23_hover_model.jpg"
+      ]
     },
 
     {
@@ -313,10 +473,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0aa8e7c20cb847af903a1b1fb819a14e_9366/Tiro_Cut_3-Stripes_Track_Pants_Blue_IZ2066_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8e3b4d75c6bd429d8a72d834c516a4f5_9366/Tiro_Cut_3-Stripes_Track_Pants_Blue_IZ2066_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0aa8e7c20cb847af903a1b1fb819a14e_9366/Tiro_Cut_3-Stripes_Track_Pants_Blue_IZ2066_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8e3b4d75c6bd429d8a72d834c516a4f5_9366/Tiro_Cut_3-Stripes_Track_Pants_Blue_IZ2066_23_hover_model.jpg"
+      ]
     },
     {
       "id": "12",
@@ -328,10 +498,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d711797f2b524102a89fcb62c06d9403_9366/Z.N.E._Pants_Grey_IS3915_21_model.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7c66ba9c23fa4d4db432c3a890661286_9366/Z.N.E._Pants_Grey_IS3915_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d711797f2b524102a89fcb62c06d9403_9366/Z.N.E._Pants_Grey_IS3915_21_model.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7c66ba9c23fa4d4db432c3a890661286_9366/Z.N.E._Pants_Grey_IS3915_23_hover_model.jpg"
+      ]
     },
 
     {
@@ -344,10 +524,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e6cfc08723f14d5aa821572ebbf15722_9366/Messi_Inter_Miami_CF_Tee_Black_JJ2296_01_laydown.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/994b6c049a6343038e2070a85523ac88_9366/Messi_Inter_Miami_CF_Tee_Black_JJ2296_02_laydown_hover.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e6cfc08723f14d5aa821572ebbf15722_9366/Messi_Inter_Miami_CF_Tee_Black_JJ2296_01_laydown.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/994b6c049a6343038e2070a85523ac88_9366/Messi_Inter_Miami_CF_Tee_Black_JJ2296_02_laydown_hover.jpg"
+      ]
     },
 
     {
@@ -361,10 +551,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2a3dc3e10ffb48f49639457ceffa3a45_9366/Designed_for_Training_Workout_Tee_Blue_IS3816_01_laydown.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d862189feafb43bab1f31dad8afb1a33_9366/Designed_for_Training_Workout_Tee_Blue_IS3816_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/2a3dc3e10ffb48f49639457ceffa3a45_9366/Designed_for_Training_Workout_Tee_Blue_IS3816_01_laydown.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d862189feafb43bab1f31dad8afb1a33_9366/Designed_for_Training_Workout_Tee_Blue_IS3816_23_hover_model.jpg"
+      ]
     },
     {
       "id": "15",
@@ -376,10 +576,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0634ab09bcc84e8a99b1afb90000ece4_9366/Red_Wings_Blend_Tee_Red_IT1309_01_laydown.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/037e4feb49e548a89d65afb90000e87d_9366/Red_Wings_Blend_Tee_Red_IT1309_02_laydown_hover.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0634ab09bcc84e8a99b1afb90000ece4_9366/Red_Wings_Blend_Tee_Red_IT1309_01_laydown.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/037e4feb49e548a89d65afb90000e87d_9366/Red_Wings_Blend_Tee_Red_IT1309_02_laydown_hover.jpg"
+      ]
     },
 
     {
@@ -392,10 +602,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ebed10e1997348578aea1a38f91ca5e5_9366/Own_The_Run_Tee_Pink_IN1592_01_laydown.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d26a06ca88cf4f459ddec8d181c7fa76_9366/Own_The_Run_Tee_Pink_IN1592_23_hover_model.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ebed10e1997348578aea1a38f91ca5e5_9366/Own_The_Run_Tee_Pink_IN1592_01_laydown.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d26a06ca88cf4f459ddec8d181c7fa76_9366/Own_The_Run_Tee_Pink_IN1592_23_hover_model.jpg"
+      ]
     },
     {
       "id": "17",
@@ -407,10 +627,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/dc20e6f154e34d3aad4a0a75d2eaf63a_9366/Own_the_Run_3-Stripes_Tee_Pink_IN8335_HM30.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5b133681ecbd42d9a070a35498763c2a_9366/Own_the_Run_3-Stripes_Tee_Pink_IN8335_HM3_hover.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/dc20e6f154e34d3aad4a0a75d2eaf63a_9366/Own_the_Run_3-Stripes_Tee_Pink_IN8335_HM30.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5b133681ecbd42d9a070a35498763c2a_9366/Own_the_Run_3-Stripes_Tee_Pink_IN8335_HM3_hover.jpg"
+      ]
     },
 
     {
@@ -423,10 +653,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cc7af4e470174fd4bd61ad980014c862_9366/Steel_Metal_Bottle_2L_White_EX7305_41_detail_hover.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/82eca63dacbe406e8f19ad98001381e8_9366/Steel_Metal_Bottle_2L_White_EX7305_01_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cc7af4e470174fd4bd61ad980014c862_9366/Steel_Metal_Bottle_2L_White_EX7305_41_detail_hover.jpg"
+      ]
     },
 
     {
@@ -439,10 +679,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9453f93fd49f47478cdfaf4a006846ea_9366/Steel_Metal_Bottle_1L_Black_GB4079_01_standard.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4dbce0fe866e44ab983caf4a00692dd5_9366/Steel_Metal_Bottle_1L_Black_GB4079_43_detail.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/9453f93fd49f47478cdfaf4a006846ea_9366/Steel_Metal_Bottle_1L_Black_GB4079_01_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4dbce0fe866e44ab983caf4a00692dd5_9366/Steel_Metal_Bottle_1L_Black_GB4079_43_detail.jpg"
+      ]
     },
     {
       "id": "20",
@@ -454,10 +704,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ba937ab63fbe44f1b289af9f000446db_9366/Steel_Bottle_600_ML_White_GC4243_01_standard.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4df7e787c3c42c4a34daf9f0005a6a8_9366/Steel_Bottle_600_ML_White_GC4243_43_detail.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ba937ab63fbe44f1b289af9f000446db_9366/Steel_Bottle_600_ML_White_GC4243_01_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/d4df7e787c3c42c4a34daf9f0005a6a8_9366/Steel_Bottle_600_ML_White_GC4243_43_detail.jpg"
+      ]
     },
 
     {
@@ -471,10 +731,20 @@
       "stock": 20,
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/523731a02e914d318cb4adcc00f985ba_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_03_standard_hover.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/35be87a52e4f4040b6a3adcc00f97aef_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_41_detail.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/523731a02e914d318cb4adcc00f985ba_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_03_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/35be87a52e4f4040b6a3adcc00f97aef_9366/adidas_FWD-02_Sport_True_Wireless_Earbuds_Grey_EY5113_41_detail.jpg"
+      ]
     },
 
     {
@@ -485,12 +755,22 @@
       "seller": "Adidas",
       "price": 100,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 3,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b322cdef8e654551ace9adcc00f963ed_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_41_detail.jpg",
-        "img2": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/14f2ad6950e5488385a6adcc00f96659_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_42_detail.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/b322cdef8e654551ace9adcc00f963ed_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_41_detail.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/14f2ad6950e5488385a6adcc00f96659_9366/adidas_Z.N.E._01_ANC_True_Wireless_Earbuds_Grey_EY5114_42_detail.jpg"
+      ]
     },
     {
       "id": "23",
@@ -503,10 +783,20 @@
 
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://static.bhphoto.com/images/multiple_images/images500x500/1685977205_IMG_2011545.jpg",
-        "img2": "https://static.bhphoto.com/images/multiple_images/images500x500/1685977205_IMG_2011547.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://static.bhphoto.com/images/multiple_images/images500x500/1685977205_IMG_2011545.jpg",
+        "https://static.bhphoto.com/images/multiple_images/images500x500/1685977205_IMG_2011547.jpg"
+      ]
     },
 
     {
@@ -519,10 +809,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/JBL_Quantum_910_Black.png",
-        "img2": "https://media.veli.store/media/product/JBL_Quantum_910_Black_2.png"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/JBL_Quantum_910_Black.png",
+        "https://media.veli.store/media/product/JBL_Quantum_910_Black_2.png"
+      ]
     },
 
     {
@@ -535,10 +835,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/dell.1920x1080303020034.jpeg",
-        "img2": "https://media.veli.store/media/product/dell_g16_7630_gaming_laptop_black_metallic_3.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/dell.1920x1080303020034.jpeg",
+        "https://media.veli.store/media/product/dell_g16_7630_gaming_laptop_black_metallic_3.jpg"
+      ]
     },
     {
       "id": "26",
@@ -550,10 +860,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/lenovo_Legion_Slim_5_storm_gray_1.jpg",
-        "img2": "https://media.veli.store/media/product/lenovo_Legion_Slim_5_storm_gray_3.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/lenovo_Legion_Slim_5_storm_gray_1.jpg",
+        "https://media.veli.store/media/product/lenovo_Legion_Slim_5_storm_gray_3.jpg"
+      ]
     },
     {
       "id": "27",
@@ -563,12 +883,22 @@
       "seller": "Acer",
       "price": 550,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 5,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/acer_inspire_5_NX.KHJER.004_laptop_black_1.jpeg",
-        "img2": "https://media.veli.store/media/product/acer_inspire_5_NX.KHJER.004_laptop_black_2.jpeg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/acer_inspire_5_NX.KHJER.004_laptop_black_1.jpeg",
+        "https://media.veli.store/media/product/acer_inspire_5_NX.KHJER.004_laptop_black_2.jpeg"
+      ]
     },
     {
       "id": "28",
@@ -578,12 +908,22 @@
       "seller": "MSI",
       "price": 450,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "ratings": 4,
+      "ratings": 5,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/msi_prestige_13_laptop_gray_1.jpg",
-        "img2": "https://media.veli.store/media/__sized__/product/msi_prestige_13_laptop_gray_4-thumbnail-50x50-95.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/msi_prestige_13_laptop_gray_1.jpg",
+        "https://media.veli.store/media/__sized__/product/msi_prestige_13_laptop_gray_4-thumbnail-50x50-95.jpg"
+      ]
     },
     {
       "id": "29",
@@ -595,10 +935,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/Samsung_A356E_Galaxy_A35_Sim_5G_-_Violet.png",
-        "img2": "https://media.veli.store/media/product/Samsung_A356E_Galaxy_A35_Sim_5G_-_Violet-3.png"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/Samsung_A356E_Galaxy_A35_Sim_5G_-_Violet.png",
+        "https://media.veli.store/media/product/Samsung_A356E_Galaxy_A35_Sim_5G_-_Violet-3.png"
+      ]
     },
     {
       "id": "30",
@@ -610,10 +960,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/Apple_iPhone_14_Plus_6_GB_128_GB_Purple_sdfsdfsds.png",
-        "img2": "https://media.veli.store/media/product/Apple_iPhone_14_Plus_6_GB_128_GB_Purple_3.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/Apple_iPhone_14_Plus_6_GB_128_GB_Purple_sdfsdfsds.png",
+        "https://media.veli.store/media/product/Apple_iPhone_14_Plus_6_GB_128_GB_Purple_3.jpg"
+      ]
     },
     {
       "id": "31",
@@ -625,10 +985,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/honor_x8b_glamorous_green1.jpg",
-        "img2": "https://media.veli.store/media/__sized__/product/honor_x8b_glamorous_green2-thumbnail-50x50-95.jpg   "
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/honor_x8b_glamorous_green1.jpg",
+        "https://media.veli.store/media/__sized__/product/honor_x8b_glamorous_green2-thumbnail-50x50-95.jpg   "
+      ]
     },
 
     {
@@ -641,10 +1011,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/5029476017829-1-1.png",
-        "img2": "https://media.veli.store/media/product/5029476017829-1-5.jpeg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/5029476017829-1-1.png",
+        "https://media.veli.store/media/product/5029476017829-1-5.jpeg"
+      ]
     },
     {
       "id": "33",
@@ -656,10 +1036,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 4,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/50294760092991.png",
-        "img2": "https://media.veli.store/media/__sized__/product/5029476009299-thumbnail-50x50.png"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/50294760092991.png",
+        "https://media.veli.store/media/__sized__/product/5029476009299-thumbnail-50x50.png"
+      ]
     },
     {
       "id": "34",
@@ -671,10 +1061,20 @@
       "ratings": 4,
       "ratingsCount": 3972,
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
-      "img": {
-        "img1": "https://media.veli.store/media/product/05029476817627.jpeg",
-        "img2": "https://media.veli.store/media/product/05029476817627-5.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/05029476817627.jpeg",
+        "https://media.veli.store/media/product/05029476817627-5.jpg"
+      ]
     },
     {
       "id": "35",
@@ -686,10 +1086,20 @@
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum sunt dolor harum dicta expedita a, labore beatae, ipsa non voluptas modi tenetur sequi? Iste facere nostrum, pariatur consequuntur omnis aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae,nemo? Lorem ipsum dolor sit amet.",
       "ratings": 3,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/10102210-123.png",
-        "img2": "https://media.veli.store/media/product/10102210-12345.png"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/10102210-123.png",
+        "https://media.veli.store/media/product/10102210-12345.png"
+      ]
     },
 
     {
@@ -702,10 +1112,20 @@
       "price": 80,
       "ratings": 3,
       "ratingsCount": 3972,
-      "img": {
-        "img1": "https://media.veli.store/media/product/195749682775.jpeg",
-        "img2": "https://media.veli.store/media/product/195749682775-3.jpg"
-      }
+      "review": [
+        {
+          "name": "Jhon Doe",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        },
+        {
+          "name": "Jane Smith",
+          "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        }
+      ],
+      "img": [
+        "https://media.veli.store/media/product/195749682775.jpeg",
+        "https://media.veli.store/media/product/195749682775-3.jpg"
+      ]
     }
   ]
 }
