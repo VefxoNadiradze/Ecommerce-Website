@@ -39,7 +39,6 @@ interface Product {
   price: number;
   description?: string;
   ratings: number;
-  ratingsCount: number;
   quantity?: number;
   review: Review[];
   img: string[];

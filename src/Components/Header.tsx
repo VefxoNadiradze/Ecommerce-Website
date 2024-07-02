@@ -5,6 +5,8 @@ import { GoSearch } from "react-icons/go";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { useSelector } from "react-redux";
+import { FormEvent, useState } from "react";
+import data from "../data.json";
 
 interface Idata {
   cart: Product[];
@@ -13,6 +15,24 @@ interface Idata {
 export default function Header() {
   let cartItems = useSelector((state: Idata) => state.cart);
   let wishlistItems = useSelector((state: Idata) => state.wishlist);
+  let [value, setValue] = useState<string>("");
+  let [FindItem, setItem] = useState<Product[]>([]);
+  let [hideLinksm, setHideLinks] = useState<boolean>(true);
+
+  // search items
+  let findItems = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    let items = data.products.filter((item) => {
+      if (value.trim() !== "") {
+        return item.name.toLowerCase().includes(value);
+      }
+    });
+    setValue("");
+    setHideLinks(false);
+
+    setItem(items);
+  };
 
   return (
     <HeaderComponent>
@@ -21,11 +41,30 @@ export default function Header() {
           <img src={Logo} alt="logo" />
         </Link>
 
-        <form className="searchParent">
-          <input type="text" placeholder="Search..." />
+        <form onSubmit={findItems} className="searchParent">
+          <input
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            type="text"
+            placeholder="Search..."
+          />
           <GoSearch className="searchIcon" />
         </form>
-
+        {hideLinksm === false && (
+          <SearchItemsParent>
+            {FindItem.map((item) => {
+              return (
+                <Link
+                  key={item.id}
+                  to={`/item/${item.id}`}
+                  onClick={() => setHideLinks(true)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </SearchItemsParent>
+        )}
         <div className="login-cart">
           <div className="signIn-signUp">
             <Link to={"/Login"} className="LoginBtn">
@@ -70,6 +109,32 @@ export default function Header() {
     </HeaderComponent>
   );
 }
+
+const SearchItemsParent = styled.div`
+  border-radius: 5px;
+  position: absolute;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 10;
+  background-color: white;
+  max-width: 50%;
+  gap: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 0px 30px gray;
+  padding: 7px;
+
+  a {
+    text-decoration: none;
+    padding: 2px;
+    font-weight: bold;
+    color: black;
+    border: 2px solid #cdc9c9;
+    cursor: pointer;
+  }
+`;
 
 const HeaderTop = styled.header`
   display: flex;

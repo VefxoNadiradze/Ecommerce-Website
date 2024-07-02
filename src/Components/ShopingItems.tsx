@@ -157,10 +157,10 @@ const ZoomImgPar = styled.div`
     border: none;
     cursor: pointer;
   }
-
   img {
     width: 35%;
     height: 65%;
+    object-fit: contain;
   }
 `;
 
@@ -237,6 +237,8 @@ const ShoppingItem = styled.div<{ arrangementselector: string }>`
     display: block;
     margin: 0 auto;
     height: 200px;
+    width: 100%;
+    object-fit: contain;
     padding: 20px;
     transition: 0.5s ease;
   }
