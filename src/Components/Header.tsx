@@ -7,6 +7,8 @@ import { FaCartShopping } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { ChangeEvent, useState } from "react";
 import data from "../data.json";
+import { IoMdClose } from "react-icons/io";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 interface Idata {
   cart: Product[];
@@ -18,6 +20,7 @@ export default function Header() {
   let [value, setValue] = useState<string>("");
   let [FindItem, setItem] = useState<Product[]>([]);
   let [hideLinksm, setHideLinks] = useState<boolean>(true);
+  let [toggleNav, setToggleNav] = useState<boolean>(false);
 
   // search items by input
   let findItems = (event: ChangeEvent<HTMLInputElement>) => {
@@ -26,9 +29,12 @@ export default function Header() {
 
     if (value.trim() !== "") {
       let items = data.products.filter((item) => {
-        if (item.name.toLowerCase().includes(value)) {
+        if (
+          item.name.toLowerCase().includes(value) ||
+          item.category.toLowerCase().includes(value)
+        ) {
           setHideLinks(false);
-          return item.name.toLowerCase().includes(value);
+          return item.name;
         }
       });
       setItem(items);
@@ -57,6 +63,9 @@ export default function Header() {
         </form>
         {hideLinksm === false && (
           <SearchItemsParent>
+            <button onClick={() => setHideLinks(true)} className="closeLinks">
+              <IoMdClose />
+            </button>
             {FindItem.map((item) => {
               return (
                 <Link
@@ -92,22 +101,47 @@ export default function Header() {
         </div>
       </HeaderTop>
       <nav>
-        <ul>
+        <button onClick={() => setToggleNav(true)} className="open">
+          <GiHamburgerMenu />
+        </button>
+        <ul className={toggleNav ? "activeNav" : ""}>
+          <button onClick={() => setToggleNav(false)} className="close">
+            <IoMdClose />
+          </button>
           <li>
             {" "}
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"} onClick={() => setToggleNav(false)}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to={`/Shopping/Electronics`}>Electronics</Link>
+            <Link
+              to={`/Shopping/Electronics`}
+              onClick={() => setToggleNav(false)}
+            >
+              Electronics
+            </Link>
           </li>
           <li>
-            <Link to={"/Shopping/Fitness"}>Fitness</Link>
+            <Link to={"/Shopping/Fitness"} onClick={() => setToggleNav(false)}>
+              Fitness
+            </Link>
           </li>
           <li>
-            <Link to={"/Shopping/Clothes&Shoes"}>Clothes & Shoes</Link>
+            <Link
+              to={"/Shopping/Clothes&Shoes"}
+              onClick={() => setToggleNav(false)}
+            >
+              Clothes & Shoes
+            </Link>
           </li>
           <li>
-            <Link to={"/Shopping/Bottles&Bags"}>Bottles & Bags</Link>
+            <Link
+              to={"/Shopping/Bottles&Bags"}
+              onClick={() => setToggleNav(false)}
+            >
+              Bottles & Bags
+            </Link>
           </li>
         </ul>
       </nav>
@@ -116,6 +150,8 @@ export default function Header() {
 }
 
 const SearchItemsParent = styled.div`
+  max-height: 500px;
+  overflow-y: auto;
   border-radius: 5px;
   position: absolute;
   left: 50%;
@@ -130,6 +166,19 @@ const SearchItemsParent = styled.div`
   gap: 10px;
   box-shadow: 0px 0px 30px gray;
   padding: 7px;
+
+  .closeLinks {
+    display: flex;
+    align-self: end;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+  }
 
   a {
     text-decoration: none;
@@ -146,8 +195,16 @@ const HeaderTop = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  @media screen and (max-width: 755px) {
+    flex-direction: column;
+    gap: 30px;
+  }
   .Logo {
     height: 120px;
+
+    @media screen and (max-width: 755px) {
+      height: 90px;
+    }
 
     img {
       height: 100%;
@@ -172,12 +229,30 @@ const HeaderTop = styled.header`
       transform: translateY(-50%);
       right: 20px;
     }
+
+    @media screen and (max-width: 965px) {
+      width: 35%;
+    }
+
+    @media screen and (max-width: 835px) {
+      width: 30%;
+    }
+
+    @media screen and (max-width: 755px) {
+      width: 88%;
+    }
   }
 
   .login-cart {
     display: flex;
     align-items: center;
     column-gap: 50px;
+
+    @media screen and (max-width: 755px) {
+      margin-top: 10px;
+      width: auto;
+      justify-content: space-between;
+    }
 
     .cart-wishlist {
       display: flex;
@@ -209,7 +284,7 @@ const HeaderTop = styled.header`
     .signIn-signUp {
       display: flex;
       align-items: center;
-      column-gap: 15px;
+      column-gap: 10px;
 
       a {
         text-decoration: none;
@@ -218,12 +293,13 @@ const HeaderTop = styled.header`
         border: none;
         letter-spacing: 1px;
         font-weight: bold;
+        font-size: 13px;
         color: black;
       }
 
       .registerBtn {
         background-color: yellow;
-        padding: 10px;
+        padding: 8px 5px;
         border-radius: 5px;
         box-shadow: 0px 0px 2px gray;
       }
@@ -235,11 +311,67 @@ const HeaderComponent = styled.header`
   padding: 0 50px;
 
   nav {
+    .open {
+      display: none;
+    }
+
+    @media screen and (max-width: 755px) {
+      .open {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        color: black;
+        font-size: 25px;
+      }
+    }
     ul {
       display: flex;
       justify-content: center;
       column-gap: 10px;
       list-style: none;
+      transition: 0.3s ease;
+
+      .close {
+        display: none;
+      }
+
+      @media screen and (max-width: 755px) {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        overflow: scroll;
+        padding: 10px;
+        z-index: 50;
+
+        .close {
+          display: block;
+          position: absolute;
+          right: 50px;
+          top: 30px;
+          background-color: transparent;
+          cursor: pointer;
+          border: none;
+          color: white;
+          font-size: 25px;
+        }
+
+        li {
+          a {
+            color: white !important;
+          }
+        }
+      }
+
       li {
         a {
           display: block;
@@ -286,6 +418,9 @@ const HeaderComponent = styled.header`
           }
         }
       }
+    }
+    .activeNav {
+      left: 0;
     }
   }
 `;

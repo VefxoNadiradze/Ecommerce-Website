@@ -22,18 +22,26 @@ export default function Home() {
 }
 
 const OfferCardsParent = styled.div`
-  display: flex;
+  display: grid;
   align-items: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   gap: 10px;
   max-width: 1350px;
   margin: 50px auto 0 auto;
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 580px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const OfferCard = styled.div<{ color: string }>`
   text-align: center;
-  width: 330px;
+
   padding: 50px;
   background-color: ${(props) => props.color};
   border-radius: 5px;

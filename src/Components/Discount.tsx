@@ -156,9 +156,9 @@ const DiscountComponent = styled.div`
   display: grid;
   column-gap: 50px;
   row-gap: 30px;
-  grid-template-columns: repeat(3, 400px);
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  padding: 100px 0;
+  padding: 100px 30px;
   background-color: #f6f9fc;
   .discountCard {
     background-color: white;
@@ -200,6 +200,10 @@ const DiscountComponent = styled.div`
           font-size: 17px;
           opacity: 0;
           transition: 0.5s ease;
+
+          @media screen and (max-width: 1000px) {
+            opacity: 1;
+          }
         }
 
         .zoomBtn {
@@ -210,6 +214,10 @@ const DiscountComponent = styled.div`
           font-size: 17px;
           opacity: 0;
           transition: 0.5s ease;
+
+          @media screen and (max-width: 1000px) {
+            opacity: 1;
+          }
         }
       }
     }
@@ -232,6 +240,10 @@ const DiscountComponent = styled.div`
       padding: 20px 10px 5px 10px;
       .itemName {
         font-weight: bold;
+
+        @media screen and (max-width: 980px) {
+          font-size: 14px;
+        }
       }
 
       .itemPrice-cartBtn {
@@ -254,6 +266,9 @@ const DiscountComponent = styled.div`
             border-radius: 15px;
             color: white;
           }
+          @media screen and (max-width: 1000px) {
+            font-size: 14px;
+          }
         }
 
         .addCartBtn {
@@ -261,9 +276,27 @@ const DiscountComponent = styled.div`
           border: none;
           font-size: 20px;
           cursor: pointer;
+
+          @media screen and (max-width: 1000px) {
+            font-size: 17px;
+          }
         }
       }
     }
+  }
+
+  @media screen and (max-width: 1100px) {
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+
+  @media screen and (max-width: 820px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 580px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 100px 0;
   }
 `;
 
