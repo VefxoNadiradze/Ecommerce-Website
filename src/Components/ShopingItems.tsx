@@ -184,6 +184,16 @@ const ProductsPar = styled.div<{ arrangementselector: string }>`
     props.arrangementselector === "grid" && "repeat(3,1fr)"};
   height: max-content;
   gap: 20px;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: ${(props) =>
+      props.arrangementselector === "grid" && "repeat(2,1fr)"};
+  }
+
+  @media screen and (max-width: 650px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 50px 0;
+  }
 `;
 
 const ShoppingItem = styled.div<{ arrangementselector: string }>`
@@ -250,6 +260,10 @@ const ShoppingItem = styled.div<{ arrangementselector: string }>`
       props.arrangementselector === "list" && "space-between"};
     width: ${(props) => props.arrangementselector === "list" && "58%"};
     align-items: center;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 14px;
+    }
 
     .price-addCartBtn {
       display: flex;

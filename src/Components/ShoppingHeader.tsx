@@ -55,6 +55,10 @@ const ShopingHeader = styled.div`
     align-items: center;
     gap: 10px;
 
+    @media screen and (max-width: 650px){
+      display: none;
+    }
+
     button {
       cursor: pointer;
       display: flex;

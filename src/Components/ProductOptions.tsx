@@ -6,6 +6,9 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { IoSearch } from "react-icons/io5";
 import { filterItemsByprice, sortItems } from "../Redux/dataSlice";
+import { FaFilter } from "react-icons/fa";
+import { IoMdClose } from "react-icons/io";
+
 import {
   FilterByBrands,
   FilterByCategoryBtn,
@@ -68,92 +71,139 @@ export default function ProductOptions() {
     }
   };
 
-  return (
-    <OptionComponent>
-      <form onSubmit={onSubmitFilterItem} className="filterProductInput">
-        <input
-          onChange={onchangeFilterItems}
-          type="text"
-          value={FilterByInput}
-          placeholder="Filter..."
-        />
-        <button type="submit">
-          <IoIosSearch />
-        </button>
-      </form>
+  const [toggleFilter, setToggleFilter] = useState<boolean>(false);
 
-      <div className="FilterByPrice">
-        <p>Price</p>
-        <form onSubmit={onSubmitFilterByPrice} className="priceInputs">
+  return (
+    <>
+      <FilterBtn onClick={() => setToggleFilter(true)}>
+        Filter
+        <FaFilter />
+      </FilterBtn>
+      <OptionComponent className={toggleFilter ? "showFilter" : ""}>
+        <CloseFilterBtn onClick={() => setToggleFilter(false)}>
+          <IoMdClose />
+        </CloseFilterBtn>
+        <form onSubmit={onSubmitFilterItem} className="filterProductInput">
           <input
-            onChange={(e) => setMinPrice(Number(e.target.value))}
-            type="number"
-            placeholder="Min."
-            min={0}
-          />
-          <input
-            onChange={(e) => setMaxPrice(Number(e.target.value))}
-            type="number"
-            placeholder="Max."
-            min={0}
+            onChange={onchangeFilterItems}
+            type="text"
+            value={FilterByInput}
+            placeholder="Filter..."
           />
           <button type="submit">
-            <IoSearch />
+            <IoIosSearch />
           </button>
         </form>
-      </div>
 
-      {uniqueCategories.length > 1 && <p>Categories</p>}
-      <div className="filterBycategories">
-        {uniqueCategories.length > 1 && (
-          <button onClick={() => dispatch(FilterByCategoryBtn("All"))}>
-            {" "}
-            All{" "}
-          </button>
-        )}
+        <div className="FilterByPrice">
+          <p>Price</p>
+          <form onSubmit={onSubmitFilterByPrice} className="priceInputs">
+            <input
+              onChange={(e) => setMinPrice(Number(e.target.value))}
+              type="number"
+              placeholder="Min."
+              min={0}
+            />
+            <input
+              onChange={(e) => setMaxPrice(Number(e.target.value))}
+              type="number"
+              placeholder="Max."
+              min={0}
+            />
+            <button type="submit">
+              <IoSearch />
+            </button>
+          </form>
+        </div>
 
-        {uniqueCategories.map((filterItem, index) => {
-          return (
-            uniqueCategories.length > 1 && (
-              <button
-                onClick={() => {
-                  dispatch(FilterByCategoryBtn(filterItem));
-                }}
-                key={index}
-              >
-                {filterItem}
-              </button>
-            )
-          );
-        })}
-      </div>
+        {uniqueCategories.length > 1 && <p>Categories</p>}
+        <div className="filterBycategories">
+          {uniqueCategories.length > 1 && (
+            <button onClick={() => dispatch(FilterByCategoryBtn("All"))}>
+              {" "}
+              All{" "}
+            </button>
+          )}
 
-      {uniqueBrands.length > 1 && <p>Brands</p>}
+          {uniqueCategories.map((filterItem, index) => {
+            return (
+              uniqueCategories.length > 1 && (
+                <button
+                  onClick={() => {
+                    dispatch(FilterByCategoryBtn(filterItem));
+                  }}
+                  key={index}
+                >
+                  {filterItem}
+                </button>
+              )
+            );
+          })}
+        </div>
 
-      <div className="filterByBrand">
-        {uniqueBrands.length > 1 && (
-          <button onClick={() => dispatch(FilterByBrands("All"))}>All</button>
-        )}
-        {uniqueBrands.map((filterItem, index) => {
-          return (
-            uniqueBrands.length > 1 && (
-              <button
-                key={index}
-                onClick={() => dispatch(FilterByBrands(filterItem))}
-              >
-                {filterItem}
-              </button>
-            )
-          );
-        })}
-      </div>
-    </OptionComponent>
+        {uniqueBrands.length > 1 && <p>Brands</p>}
+
+        <div className="filterByBrand">
+          {uniqueBrands.length > 1 && (
+            <button onClick={() => dispatch(FilterByBrands("All"))}>All</button>
+          )}
+          {uniqueBrands.map((filterItem, index) => {
+            return (
+              uniqueBrands.length > 1 && (
+                <button
+                  key={index}
+                  onClick={() => dispatch(FilterByBrands(filterItem))}
+                >
+                  {filterItem}
+                </button>
+              )
+            );
+          })}
+        </div>
+      </OptionComponent>
+    </>
   );
 }
 
+const FilterBtn = styled.button`
+  padding: 5px 3px;
+  width: max-content;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  background-color: #e4e4e4;
+  display: none;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+  }
+  @media screen and (max-width: 650px) {
+    position: absolute;
+    right: 20px;
+  }
+`;
+
+const CloseFilterBtn = styled.button`
+  display: none;
+  padding: 5px 3px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  margin: 15px 0px 15px auto;
+
+  @media screen and (max-width: 900px) {
+    display: flex;
+  }
+`;
+
 const OptionComponent = styled.div`
   padding: 20px;
-  max-width: 250px;
+  /* max-width: 250px; */
 
   .filterProductInput {
     position: relative;
@@ -262,6 +312,15 @@ const OptionComponent = styled.div`
         color: white;
       }
     }
+
+    @media screen and (max-width: 333px) {
+      margin: 20px 0;
+      gap: 5px;
+    }
+
+    @media screen and (max-width: 333px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   .filterByBrand {
@@ -283,6 +342,52 @@ const OptionComponent = styled.div`
       &:hover {
         background-color: green;
         color: white;
+      }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    display: none;
+    position: fixed;
+    background-color: #000000dc;
+    color: green;
+    top: 0;
+    width: 100%;
+    overflow-y: auto;
+    height: 100vh;
+
+    &.showFilter {
+      display: block;
+    }
+
+    .FilterByPrice {
+      margin: 20px 0;
+
+      .priceInputs {
+        width: 100%;
+        input {
+          padding: 10px;
+          max-width: 40%;
+        }
+      }
+    }
+
+    .filterProductInput {
+      input {
+        padding: 12px;
+      }
+    }
+
+    .filterBycategories {
+      button {
+        padding: 10px;
+        font-size: 17px;
+      }
+    }
+    .filterByBrand {
+      button {
+        padding: 10px;
+        font-size: 17px;
       }
     }
   }
