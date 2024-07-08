@@ -55,6 +55,12 @@ const LoginregisterContainer = styled.div`
   border-radius: 5px;
   width: 350px;
 
+  @media screen and (max-width: 430px) {
+    max-width: 100%;
+
+    padding: 20px 5px;
+  }
+
   .homeButton {
     text-decoration: none;
     position: absolute;

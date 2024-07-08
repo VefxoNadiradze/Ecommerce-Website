@@ -105,6 +105,14 @@ const WishlistParent = styled.div`
   height: max-content;
   gap: 20px;
   margin-top: 20px;
+
+  @media screen and (max-width: 970px) {
+    padding: 50px 10px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 678px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const WishlistItem = styled.div`
@@ -137,6 +145,16 @@ const WishlistItem = styled.div`
 
   .productOptions {
     padding: 20px 10px 5px 10px;
+
+    h3 {
+      @media screen and (max-width: 970px) {
+        font-size: 15px;
+      }
+
+      @media screen and (max-width: 678px) {
+        font-size: 14px;
+      }
+    }
     .price-addCartBtn {
       display: flex;
       align-items: center;

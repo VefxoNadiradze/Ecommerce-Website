@@ -115,8 +115,16 @@ const CartParent = styled.div`
   display: flex;
   justify-content: center;
   background-color: #f6f9fc;
-
   gap: 50px;
+
+  @media screen and (max-width: 1150px) {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 455px) {
+    padding: 50px 10px;
+  }
 
   .payment-totalprice {
     box-shadow: 0px 0px 10px gray;
@@ -124,6 +132,26 @@ const CartParent = styled.div`
     width: 33%;
     height: max-content;
     border-radius: 5px;
+
+    @media screen and (max-width: 455px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 1150px) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 770px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 590px) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 455px) {
+      width: 100%;
+    }
 
     .clearCart {
       display: flex;
@@ -161,6 +189,10 @@ const CartParent = styled.div`
       cursor: pointer;
       transition: 0.3s ease;
 
+      @media screen and (max-width: 455px) {
+        font-size: 14px;
+      }
+
       &:hover {
         background-color: white;
         color: #a2cd6b;
@@ -193,6 +225,11 @@ const CartItemsPar = styled.div`
   flex-direction: column;
   gap: 20px;
   background-color: #f6f9fc;
+
+  @media screen and (max-width: 1150px) {
+    gap: 10px;
+    width: 100%;
+  }
 `;
 
 const CartItem = styled.div`
@@ -203,12 +240,35 @@ const CartItem = styled.div`
   border-radius: 5px;
   height: 100%;
 
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+  }
+
   img {
     display: block;
     width: 200px;
     height: 200px;
     padding: 20px;
     transition: 0.5s ease;
+
+    @media screen and (max-width: 1150px) {
+      width: 20%;
+      height: 40%;
+
+      padding: 7px;
+    }
+
+    @media screen and (max-width: 674px) {
+      width: 23%;
+      height: 40%;
+      padding: 7px;
+    }
+
+    @media screen and (max-width: 540px) {
+      width: 50%;
+      height: 45%;
+      padding: 7px;
+    }
   }
 
   .itemDescription {
@@ -227,12 +287,21 @@ const CartItem = styled.div`
       display: flex;
       align-items: center;
       gap: 20px;
+
       button {
         background-color: transparent;
         padding: 5px;
         border: none;
         cursor: pointer;
         font-size: 18px;
+
+        @media screen and (max-width: 1150px) {
+          font-size: 20px;
+        }
+      }
+      @media screen and (max-width: 1150px) {
+        width: 90%;
+        justify-content: space-between;
       }
     }
 
@@ -242,6 +311,15 @@ const CartItem = styled.div`
       gap: 5px;
       box-shadow: 0px 0px 5px gray;
       border-radius: 5px;
+    }
+
+    @media screen and (max-width: 1150px) {
+      flex-direction: column;
+      margin-top: 20px;
+      p {
+        width: 100%;
+        font-size: 13px;
+      }
     }
   }
 `;

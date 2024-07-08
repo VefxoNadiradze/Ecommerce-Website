@@ -144,9 +144,6 @@ const RegisterForm = styled.form`
     justify-content: space-between;
   }
 
-  .phoneNumber:focus::placeholder {
-  }
-
   .passwordDiv {
     display: flex;
     align-items: center;

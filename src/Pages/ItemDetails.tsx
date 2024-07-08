@@ -207,6 +207,17 @@ const DescriptionReview = styled.div`
   width: 70%;
   margin-top: 50px;
   margin-left: 50px;
+
+  .description {
+    @media screen and (max-width: 610px) {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    margin-left: 0;
+  }
   .review {
     margin: 20px 0;
 
@@ -217,9 +228,15 @@ const DescriptionReview = styled.div`
     .Rname {
       font-size: 18px;
       font-weight: bold;
+      @media screen and (max-width: 610px) {
+        font-size: 15px;
+      }
     }
     .Rtext {
       font-size: 14px;
+      @media screen and (max-width: 610px) {
+        font-size: 13px;
+      }
     }
   }
 
@@ -267,16 +284,28 @@ const DescriptionReview = styled.div`
 
 const AboutItem = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 20px;
 
   .productImage {
     max-width: 31%;
     max-height: 52vh;
+
+    @media screen and (max-width: 750px) {
+      max-width: 51%;
+      max-height: 52vh;
+    }
+
     img {
       height: 100%;
       width: 100%;
     }
+  }
+
+  @media screen and (max-width: 610px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .itemAbout {
@@ -285,6 +314,20 @@ const AboutItem = styled.div`
     gap: 20px;
     max-width: 50%;
     padding: 10px 55px;
+
+    @media screen and (max-width: 750px) {
+      max-width: 38%;
+      padding: 7px;
+
+      h2 {
+        font-size: 16px;
+      }
+    }
+
+    @media screen and (max-width: 610px) {
+      max-width: 100%;
+      padding: 5px;
+    }
 
     button {
       display: block;
@@ -305,6 +348,10 @@ const AboutItem = styled.div`
         display: flex;
         align-items: center;
         gap: 3px;
+
+        @media screen and (max-width: 750px) {
+          font-size: 13px;
+        }
 
         .yellowStar {
           path {

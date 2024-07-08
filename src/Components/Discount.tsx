@@ -144,10 +144,32 @@ const ZoomImgPar = styled.div`
     background-color: transparent;
     border: none;
     cursor: pointer;
+
+    @media screen and (max-width: 968px) {
+      right: 50px;
+      top: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+      right: 10px;
+      top: 10px;
+    }
   }
   img {
     width: 35%;
     height: 65%;
+
+    @media screen and (max-width: 968px) {
+      width: 50%;
+    }
+    @media screen and (max-width: 678px) {
+      width: 70%;
+    }
+
+    @media screen and (max-width: 458px) {
+      width: 100%;
+      height: 75%;
+    }
   }
 `;
 const DiscountComponent = styled.div`
