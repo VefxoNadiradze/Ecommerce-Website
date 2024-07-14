@@ -33,6 +33,8 @@ export default function ItemDetails() {
     stars.push(<FaStar key={i} />);
   }
 
+  const [currentImage, setCurrentImage] = useState<string>("");
+
   return (
     <ItemDetailsParent>
       {ShopingItems.length > 0
@@ -41,8 +43,27 @@ export default function ItemDetails() {
               <div key={item.id}>
                 <AboutItem>
                   <div className="productImage">
-                    <img src={item.img[0]} alt="" />
+                    <img
+                      src={
+                        currentImage?.length < 1 ? item.img[0] : currentImage
+                      }
+                      alt=""
+                    />
+
+                    <div className="productImages">
+                      {item.img.map((itemImg, index) => {
+                        return (
+                          <img
+                            key={index}
+                            onClick={() => setCurrentImage(itemImg)}
+                            src={itemImg}
+                            alt=""
+                          />
+                        );
+                      })}
+                    </div>
                   </div>
+
                   <div className="itemAbout">
                     <h2>{item.name}</h2>
                     <div className="itemRating">
@@ -285,12 +306,16 @@ const DescriptionReview = styled.div`
 
 const AboutItem = styled.div`
   display: flex;
+
   justify-content: space-around;
   gap: 20px;
 
   .productImage {
+    display: flex;
     max-width: 30%;
-    max-height: 50vh;
+    gap: 20px;
+    flex-direction: column;
+    height: 501px;
 
     @media screen and (max-width: 750px) {
       max-width: 51%;
@@ -298,9 +323,24 @@ const AboutItem = styled.div`
     }
 
     img {
-      height: 100%;
+      height: 50%;
       width: 100%;
       object-fit: contain;
+    }
+
+    .productImages {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      img {
+        border: 2px solid black;
+        width: 50%;
+        height: 100px;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 5px;
+      }
     }
   }
 
