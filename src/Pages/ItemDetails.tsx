@@ -206,6 +206,7 @@ const ItemDetailsParent = styled.div`
 const DescriptionReview = styled.div`
   width: 70%;
   margin-top: 50px;
+
   margin-left: 50px;
 
   .description {
@@ -284,12 +285,12 @@ const DescriptionReview = styled.div`
 
 const AboutItem = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 20px;
 
   .productImage {
-    max-width: 31%;
-    max-height: 52vh;
+    max-width: 30%;
+    max-height: 50vh;
 
     @media screen and (max-width: 750px) {
       max-width: 51%;
@@ -299,6 +300,7 @@ const AboutItem = styled.div`
     img {
       height: 100%;
       width: 100%;
+      object-fit: contain;
     }
   }
 

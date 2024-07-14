@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Slider from "../Components/HomeSlider";
 import datas from "../data.json";
 import Discount from "../Components/Discount";
+import HomeShoppingItems from "../Components/HomeShoppingItems";
 export default function Home() {
   return (
     <>
@@ -16,6 +17,7 @@ export default function Home() {
           );
         })}
       </OfferCardsParent>
+      <HomeShoppingItems />
       <Discount />
     </>
   );

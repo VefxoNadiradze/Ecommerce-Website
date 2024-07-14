@@ -188,6 +188,31 @@ const SearchItemsParent = styled.div`
 
     cursor: pointer;
   }
+
+  @media screen and (max-width: 1150px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 950px) {
+    a {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (max-width: 895px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 755px) {
+    top: 180px;
+  }
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    a {
+      padding: 7px 0.2px;
+      font-size: 12px;
+    }
+  }
 `;
 
 const HeaderTop = styled.header`

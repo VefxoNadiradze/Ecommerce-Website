@@ -12,6 +12,10 @@ const cartSlice = createSlice({
         (item) => item.id === action.payload
       );
 
+      let homeProducts = productData.HomeProducts.find(
+        (item) => item.id === action.payload
+      );
+
       // finding the discount item which is clicked
       let discountItem = productData.discount.find(
         (item) => item.id === action.payload
@@ -21,9 +25,12 @@ const cartSlice = createSlice({
         state.push({ ...clickedItem!, quantity: 1 });
       }
 
+      if (homeProducts) {
+        state.push({ ...homeProducts!, quantity: 1 });
+      }
       // adding discountItems items in the cart
       if (discountItem) {
-        state.push({ ...discountItem, quantity: 1 });
+        state.push({ ...discountItem!, quantity: 1 });
       }
     },
     // removing single item from cart

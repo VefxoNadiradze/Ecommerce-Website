@@ -176,11 +176,11 @@ const DiscountComponent = styled.div`
   max-width: 100%;
   margin: 30px auto 0 auto;
   display: grid;
-  column-gap: 50px;
-  row-gap: 30px;
-  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
-  padding: 100px 30px;
+  padding: 100px 10px;
   background-color: #f6f9fc;
   .discountCard {
     background-color: white;
@@ -308,8 +308,9 @@ const DiscountComponent = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
-    column-gap: 20px;
+    column-gap: 13px;
     row-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   @media screen and (max-width: 820px) {

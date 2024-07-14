@@ -25,6 +25,7 @@ interface IData {
 }
 export default function Discount() {
   let dispatch = useDispatch();
+
   const dataSelector = useSelector((state: Idatas) => state.datas);
   let cartItems = useSelector((state: IData) => state.cart);
   let wishlistItems = useSelector((state: IData) => state.wishlist);
