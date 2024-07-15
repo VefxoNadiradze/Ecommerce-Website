@@ -17,6 +17,9 @@ export default function ItemDetails() {
   const { id } = useParams();
   let ShopingItems = data.products.filter((item: Product) => item.id === id);
   let discountItems = data.discount.filter((item: Product) => item.id === id);
+  let homeShoppingSlider = data.HomeProducts.filter(
+    (item: Product) => item.id === id
+  );
   let cartItems = useSelector((state: IData) => state.cart);
   let dispatch = useDispatch();
 
@@ -37,184 +40,291 @@ export default function ItemDetails() {
 
   return (
     <ItemDetailsParent>
-      {ShopingItems.length > 0
-        ? ShopingItems.map((item) => {
-            return (
-              <div key={item.id}>
-                <AboutItem>
-                  <div className="productImage">
-                    <img
-                      src={
-                        currentImage?.length < 1 ? item.img[0] : currentImage
-                      }
-                      alt=""
-                    />
+      {ShopingItems.length > 0 &&
+        ShopingItems.map((item) => {
+          return (
+            <div key={item.id}>
+              <AboutItem>
+                <div className="productImage">
+                  <img
+                    src={currentImage?.length < 1 ? item.img[0] : currentImage}
+                    alt=""
+                  />
 
-                    <div className="productImages">
-                      {item.img.map((itemImg, index) => {
+                  <div className="productImages">
+                    {item.img.map((itemImg, index) => {
+                      return (
+                        <img
+                          key={index}
+                          onClick={() => setCurrentImage(itemImg)}
+                          src={itemImg}
+                          alt=""
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="itemAbout">
+                  <h2>{item.name}</h2>
+                  <div className="itemRating">
+                    <div className="stars">
+                      {stars.map((Staritem, index) => {
                         return (
-                          <img
+                          <span
+                            className={index < item.ratings ? "yellowStar" : ""}
                             key={index}
-                            onClick={() => setCurrentImage(itemImg)}
-                            src={itemImg}
-                            alt=""
-                          />
+                          >
+                            {Staritem}
+                          </span>
                         );
                       })}
                     </div>
+                    <p>
+                      {item.ratings}
+                      <span> ratings</span>
+                    </p>
                   </div>
+                  <p className="price">Price: ${item.price}</p>
+                  <p className="category">category: {item.category}</p>
+                  <button
+                    className="addCartBtn"
+                    onClick={() => {
+                      const cartItem = cartItems.find(
+                        (cartItem) => cartItem.id === item.id
+                      );
+                      if (!cartItem) {
+                        dispatch(addItemsInCart(item.id));
+                        ProductaddNotification();
+                      } else [ProductaddedNotification()];
+                    }}
+                  >
+                    <FaCartShopping />
+                  </button>
+                </div>
+              </AboutItem>
+              <DescriptionReview>
+                <div className="descriptionReviewHeader">
+                  <button
+                    onClick={() => setReview(false)}
+                    className={reviews === false ? "descriptionBtn" : ""}
+                  >
+                    Description
+                  </button>
+                  <button
+                    onClick={() => setReview(true)}
+                    className={reviews ? "reviewBtn" : ""}
+                  >
+                    Review
+                  </button>
+                </div>
+                {!reviews ? (
+                  <div className="description">
+                    <p>{item.description}</p>
+                  </div>
+                ) : (
+                  item.review.map((Reviewitem, index) => (
+                    <div className="review" key={index}>
+                      <p className="Rname">{Reviewitem.name}</p>
+                      <p className="Rtext">{Reviewitem.text}</p>
+                    </div>
+                  ))
+                )}
+              </DescriptionReview>
+              <ToastContainer closeOnClick />
+            </div>
+          );
+        })}
 
-                  <div className="itemAbout">
-                    <h2>{item.name}</h2>
-                    <div className="itemRating">
-                      <div className="stars">
-                        {stars.map((Staritem, index) => {
-                          return (
-                            <span
-                              className={
-                                index < item.ratings ? "yellowStar" : ""
-                              }
-                              key={index}
-                            >
-                              {Staritem}
-                            </span>
-                          );
-                        })}
-                      </div>
-                      <p>
-                        {item.ratings}
-                        <span> ratings</span>
-                      </p>
-                    </div>
-                    <p className="price">Price: ${item.price}</p>
-                    <p className="category">category: {item.category}</p>
-                    <button
-                      className="addCartBtn"
-                      onClick={() => {
-                        const cartItem = cartItems.find(
-                          (cartItem) => cartItem.id === item.id
+      {discountItems.length > 0 &&
+        discountItems.map((item) => {
+          return (
+            <div key={item.id}>
+              <AboutItem>
+                <div className="productImage">
+                  <img
+                    src={currentImage?.length < 1 ? item.img[0] : currentImage}
+                    alt=""
+                  />
+
+                  <div className="productImages">
+                    {item.img.map((itemImg, index) => {
+                      return (
+                        <img
+                          onClick={() => setCurrentImage(itemImg)}
+                          key={index}
+                          src={itemImg}
+                          alt=""
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="itemAbout">
+                  <h2>{item.name}</h2>
+                  <div className="itemRating">
+                    <div className="stars">
+                      {stars.map((Staritem, index) => {
+                        return (
+                          <span
+                            className={index < item.ratings ? "yellowStar" : ""}
+                            key={index}
+                          >
+                            {Staritem}
+                          </span>
                         );
-                        if (!cartItem) {
-                          dispatch(addItemsInCart(item.id));
-                          ProductaddNotification();
-                        } else [ProductaddedNotification()];
-                      }}
-                    >
-                      <FaCartShopping />
-                    </button>
-                  </div>
-                </AboutItem>
-                <DescriptionReview>
-                  <div className="descriptionReviewHeader">
-                    <button
-                      onClick={() => setReview(false)}
-                      className={reviews === false ? "descriptionBtn" : ""}
-                    >
-                      Description
-                    </button>
-                    <button
-                      onClick={() => setReview(true)}
-                      className={reviews ? "reviewBtn" : ""}
-                    >
-                      Review
-                    </button>
-                  </div>
-                  {!reviews ? (
-                    <div className="description">
-                      <p>{item.description}</p>
+                      })}
                     </div>
-                  ) : (
-                    item.review.map((Reviewitem, index) => (
-                      <div className="review" key={index}>
-                        <p className="Rname">{Reviewitem.name}</p>
-                        <p className="Rtext">{Reviewitem.text}</p>
-                      </div>
-                    ))
-                  )}
-                </DescriptionReview>
-                <ToastContainer closeOnClick />
-              </div>
-            );
-          })
-        : discountItems.map((item) => {
-            return (
-              <div key={item.id}>
-                <AboutItem>
-                  <div className="productImage">
-                    <img src={item.img[0]} alt="" />
+                    <p>
+                      {item.ratings}
+                      <span> ratings</span>
+                    </p>
                   </div>
-                  <div className="itemAbout">
-                    <h2>{item.name}</h2>
-                    <div className="itemRating">
-                      <div className="stars">
-                        {stars.map((Staritem, index) => {
-                          return (
-                            <span
-                              className={
-                                index < item.ratings ? "yellowStar" : ""
-                              }
-                              key={index}
-                            >
-                              {Staritem}
-                            </span>
-                          );
-                        })}
-                      </div>
-                      <p>
-                        {item.ratings}
-                        <span> ratings</span>
-                      </p>
+                  <p className="price">Price: ${item.price}</p>
+                  <p className="category">category: {item.category}</p>
+                  <button
+                    className="addCartBtn"
+                    onClick={() => {
+                      const cartItem = cartItems.find(
+                        (cartItem) => cartItem.id === item.id
+                      );
+                      if (!cartItem) {
+                        dispatch(addItemsInCart(item.id));
+                        ProductaddNotification();
+                      } else [ProductaddedNotification()];
+                    }}
+                  >
+                    <FaCartShopping />
+                  </button>
+                </div>
+              </AboutItem>
+              <DescriptionReview>
+                <div className="descriptionReviewHeader">
+                  <button
+                    onClick={() => setReview(false)}
+                    className={reviews === false ? "descriptionBtn" : ""}
+                  >
+                    Description
+                  </button>
+                  <button
+                    onClick={() => setReview(true)}
+                    className={reviews ? "reviewBtn" : ""}
+                  >
+                    Review
+                  </button>
+                </div>
+                {!reviews ? (
+                  <div className="description">
+                    <p>{item.description}</p>
+                  </div>
+                ) : (
+                  item.review.map((Reviewitem, index) => (
+                    <div className="review" key={index}>
+                      <p className="Rname">{Reviewitem.name}</p>
+                      <p className="Rtext">{Reviewitem.text}</p>
                     </div>
-                    <p className="price">Price: ${item.price}</p>
-                    <p className="category">category: {item.category}</p>
-                    <button
-                      className="addCartBtn"
-                      onClick={() => {
-                        const cartItem = cartItems.find(
-                          (cartItem) => cartItem.id === item.id
+                  ))
+                )}
+              </DescriptionReview>
+              <ToastContainer closeOnClick />
+            </div>
+          );
+        })}
+
+      {homeShoppingSlider.length > 0 &&
+        homeShoppingSlider.map((item) => {
+          return (
+            <div key={item.id}>
+              <AboutItem>
+                <div className="productImage">
+                  <img
+                    src={currentImage?.length < 1 ? item.img[0] : currentImage}
+                    alt=""
+                  />
+
+                  <div className="productImages">
+                    {item.img.map((itemImg, index) => {
+                      return (
+                        <img
+                          onClick={() => setCurrentImage(itemImg)}
+                          key={index}
+                          src={itemImg}
+                          alt=""
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="itemAbout">
+                  <h2>{item.name}</h2>
+                  <div className="itemRating">
+                    <div className="stars">
+                      {stars.map((Staritem, index) => {
+                        return (
+                          <span
+                            className={index < item.ratings ? "yellowStar" : ""}
+                            key={index}
+                          >
+                            {Staritem}
+                          </span>
                         );
-                        if (!cartItem) {
-                          dispatch(addItemsInCart(item.id));
-                          ProductaddNotification();
-                        } else [ProductaddedNotification()];
-                      }}
-                    >
-                      <FaCartShopping />
-                    </button>
-                  </div>
-                </AboutItem>
-                <DescriptionReview>
-                  <div className="descriptionReviewHeader">
-                    <button
-                      onClick={() => setReview(false)}
-                      className={reviews === false ? "descriptionBtn" : ""}
-                    >
-                      Description
-                    </button>
-                    <button
-                      onClick={() => setReview(true)}
-                      className={reviews ? "reviewBtn" : ""}
-                    >
-                      Review
-                    </button>
-                  </div>
-                  {!reviews ? (
-                    <div className="description">
-                      <p>{item.description}</p>
+                      })}
                     </div>
-                  ) : (
-                    item.review.map((Reviewitem, index) => (
-                      <div className="review" key={index}>
-                        <p className="Rname">{Reviewitem.name}</p>
-                        <p className="Rtext">{Reviewitem.text}</p>
-                      </div>
-                    ))
-                  )}
-                </DescriptionReview>
-                <ToastContainer closeOnClick />
-              </div>
-            );
-          })}
+                    <p>
+                      {item.ratings}
+                      <span> ratings</span>
+                    </p>
+                  </div>
+                  <p className="price">Price: ${item.price}</p>
+                  <p className="category">category: {item.category}</p>
+                  <button
+                    className="addCartBtn"
+                    onClick={() => {
+                      const cartItem = cartItems.find(
+                        (cartItem) => cartItem.id === item.id
+                      );
+                      if (!cartItem) {
+                        dispatch(addItemsInCart(item.id));
+                        ProductaddNotification();
+                      } else [ProductaddedNotification()];
+                    }}
+                  >
+                    <FaCartShopping />
+                  </button>
+                </div>
+              </AboutItem>
+              <DescriptionReview>
+                <div className="descriptionReviewHeader">
+                  <button
+                    onClick={() => setReview(false)}
+                    className={reviews === false ? "descriptionBtn" : ""}
+                  >
+                    Description
+                  </button>
+                  <button
+                    onClick={() => setReview(true)}
+                    className={reviews ? "reviewBtn" : ""}
+                  >
+                    Review
+                  </button>
+                </div>
+                {!reviews ? (
+                  <div className="description">
+                    <p>{item.description}</p>
+                  </div>
+                ) : (
+                  item.review.map((Reviewitem, index) => (
+                    <div className="review" key={index}>
+                      <p className="Rname">{Reviewitem.name}</p>
+                      <p className="Rtext">{Reviewitem.text}</p>
+                    </div>
+                  ))
+                )}
+              </DescriptionReview>
+              <ToastContainer closeOnClick />
+            </div>
+          );
+        })}
     </ItemDetailsParent>
   );
 }

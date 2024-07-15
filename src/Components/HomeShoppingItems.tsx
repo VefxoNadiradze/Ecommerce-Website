@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 interface IData {
   cart: Product[];
@@ -51,7 +52,9 @@ export default function HomeShoppingItems() {
         {data.HomeProducts.map((item) => {
           return (
             <SwiperSlide key={item.id} className="sliderItem">
-              <img src={item.img[0]} alt="" />
+              <Link to={`/item/${item.id}`}>
+                <img src={item.img[0]} alt="slider products" />
+              </Link>
 
               <div className="itemDescription">
                 {item.name}
