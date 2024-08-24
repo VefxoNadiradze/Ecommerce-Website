@@ -246,7 +246,7 @@ const CartItem = styled.div`
 
   img {
     display: block;
-    width: 200px;
+    width: 250px;
     height: 200px;
     padding: 20px;
     transition: 0.5s ease;

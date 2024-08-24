@@ -433,7 +433,7 @@ const AboutItem = styled.div`
     }
 
     img {
-      height: 50%;
+      height: 280px;
       width: 100%;
       object-fit: contain;
     }
@@ -445,7 +445,7 @@ const AboutItem = styled.div`
       gap: 18px;
       img {
         border: 2px solid black;
-        width: 50%;
+        width: 150px;
         height: 100px;
         cursor: pointer;
         padding: 4px;

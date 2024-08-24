@@ -13,4 +13,7 @@ const dataStore = configureStore({
   },
 });
 
+export type RootState = ReturnType<typeof dataStore.getState>;
+export type AppDispatch = typeof dataStore.dispatch;
+
 export default dataStore;
